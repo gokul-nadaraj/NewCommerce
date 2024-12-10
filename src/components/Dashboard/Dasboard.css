@@ -1,0 +1,42 @@
+.dashboard-container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    width: 100%;
+    background-color: #f8f9fa; /* Light background for the dashboard */
+  }
+  
+  .Your-headers {
+    width: 250px; /* Fixed width for the left sidebar */
+    background-color: #343a40; /* Dark sidebar background */
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Always stays on the left */
+    top: 0;
+    height: 100vh;
+  }
+  
+  .Your-headers p {
+    margin: 20px 0;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .Your-headers p a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+  }
+  
+  .Your-headers p a:hover {
+    color: #ffc107; /* Highlight on hover */
+  }
+  
+  .content {
+    flex-grow: 1; /* Content takes the remaining space */
+    padding: 40px;
+    background-color: #ffffff;
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  }
+  

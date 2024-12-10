@@ -1,0 +1,189 @@
+
+.main {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 50px;
+ width: 100vw;
+  flex-wrap: wrap;
+  gap: 20px; /
+}
+
+
+.contact-info {
+  width: 500px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info .info p {
+  margin: 10px 0;
+  text-align: justify;
+  line-height: 3.5;
+}
+
+/* From Uiverse.io by vikiWayne */ 
+.Password-container .password-co {
+  padding: 5px 1em;
+  border: none;
+  margin: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #2c9caf;
+  transition: all 1000ms;
+  font-size: 17px;
+  overflow: hidden;
+  outline: 1px solid #3f6908;
+}
+
+.password-co:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+  outline: 2px solid #70bdca;
+  box-shadow: 4px 5px 17px -4px #268391;
+}
+
+.password-co::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color:#02ba62;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+
+.password-co:hover::before {
+  width: 250%;
+}
+
+
+
+.main-img {
+  text-align: center;
+  max-width: 500px;
+  max-height:500px ;
+}
+
+.main-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+
+@media screen and (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-info {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .main-img {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/* Styling for the password-btn */
+/* From Uiverse.io by cssbuttons-io */ 
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  margin-top: 20px;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+ }
+ 
+ button.learn-more {
+  width: 12rem;
+  height: auto;
+ }
+ 
+ button.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #282936;
+  border-radius: 1.625rem;
+ }
+ 
+ button.learn-more .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+ }
+ 
+ button.learn-more .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+ }
+ 
+ button.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
+ }
+ 
+ button.learn-more .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: #282936;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+ }
+ 
+ button:hover .circle {
+  width: 100%;
+ }
+ 
+ button:hover .circle .icon.arrow {
+  background: #fff;
+  transform: translate(1rem, 0);
+ }
+ 
+ button:hover .button-text {
+  color: #fff;
+ }

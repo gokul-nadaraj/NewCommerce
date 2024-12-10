@@ -1,0 +1,95 @@
+
+[
+
+  {
+    "_id": 1,
+    "name": "Wireless Headphones",
+    "description": "High-quality wireless headphones with noise cancellation.",
+    "price": 79.99,
+    "image": "/images/product1.png",
+    "images":[
+      "/images/product_11.png",
+      "/images/product_12.png",
+      "/images/product1.png",
+      "/images/product_13.png"
+
+    ],
+    "rating": 4.7
+  },
+  {
+    "_id": 2,
+    "name": "Smartwatch",
+    "description": "High-quality wireless headphones with noise cancellation.",
+    "price": 99.99,
+    "image": "/images/product2.png",
+    "images":[
+      "/images/product_22.png",
+      "/images/product_23.png",
+      "/images/product_21.png",
+      "/images/product2.png"
+
+    ],
+    "rating": 4.2
+  },
+  {
+    "_id": 3,
+    "name": "Bluetooth Speaker",
+    "description": "Portable Bluetooth speaker with high-quality sound.",
+    "price": 49.99,
+    "image": "/images/product3.png",
+    "images":[
+      "/images/product_32.png",
+      "/images/product_33.png",
+      "/images/product3.png",
+      "/images/product_33.png"
+
+    ],
+    "rating": 5
+  },
+  {
+    "_id": 4,
+    "name": "Digital Camera",
+    "description": "Compact digital camera with 20MP resolution and HD video recording.",
+    "price": 149.99,
+    "image": "/images/product4.png",
+    "images":[
+      "/images/product_42.png",
+      "/images/product_43.png",
+      "/images/product_41.png",
+      "/images/product4.png"
+
+    ],
+    "rating": 4.3
+  },
+  {
+    "_id": 5,
+    "name": "Wireless Charger",
+    "description": "Fast wireless charger compatible with all Qi-enabled devices.",
+    "price": 19.99,
+    "image": "/images/product5.png",
+    "images":[
+      "/images/product_52.png",
+      "/images/product_53.png",
+      "/images/product_51.png",
+      "/images/product5.png"
+
+    ],
+    "rating": 4.7
+  },
+  {
+    "_id": 6,
+    "name": "Apple I Phone",
+    "description": "Fast wireless charger compatible with all Qi-enabled devices.",
+    "price": 1200.99,
+    "image": "/images/product6.png",
+    "images":[
+      "/images/product_22.png",
+      "/images/product_23.png",
+      "/images/product_21.png",
+      "/images/product2.png"
+
+    ],
+    "rating": 4.7
+  }
+  
+]

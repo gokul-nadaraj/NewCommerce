@@ -1,0 +1,90 @@
+.email-container {
+  width: 500px;
+  height: 500px;
+  padding: 20px;
+  border-radius: 8px;
+  font-family: 'poppins', sans-serif;
+}
+
+.email-container h4 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.success-msg {
+  color: #28a745;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.error-msg {
+  color: #dc3545;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+
+  
+}
+
+.form-group label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .email-container {
+    padding: 15px;
+  }
+
+  .email-container h4 {
+    font-size: 1.25rem;
+  }
+
+  .form-group input {
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,63 @@
+
+.payment-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 400px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-name {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.input-name input {
+  margin-right: 15px;
+}
+
+.radio {
+  width: 20px;
+  height: 20px;
+}
+.razorpay {
+  font-size: 20px;
+}
+
+.pay-btn {
+  width: 40%;
+}
+
+.pay-button {
+  /* width: 100%; */
+  padding: 10px 20px;
+  background-color: #ccc;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: not-allowed;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pay-button.enabled {
+  background-color: #28a745;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.pay-button:disabled {
+  opacity: 0.6;
+}
+.radio {
+  margin-right: 10px;
+}
+
+.razorpay {
+  font-size: 1rem;
+
+}
