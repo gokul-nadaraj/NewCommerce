@@ -14,7 +14,7 @@ import { faEnvelope as faEnvelopeRegular } from "@fortawesome/free-regular-svg-i
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 // import { faShoppingCart, faSignInAlt, faUser } from '@fortawesome/free-solid-svg-icons';
-import "./Navbar.css";
+// import "./Navbar.css";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
@@ -49,16 +49,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="name-container">
-          <p>
-            <FontAwesomeIcon icon={faWhatsapp} className="fa" />+
-            <a>8769878332</a>
-          </p>
-          <p>
-            <FontAwesomeIcon icon={faEnvelopeRegular} className="fa" />
-            <a href="mailto:yesuraj88@gmail.com">yesuraj88@gmail.com</a>
-          </p>
-        </div>
+     
 
         {user ? (
           <>

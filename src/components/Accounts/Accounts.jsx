@@ -1,129 +1,124 @@
 import React, { useEffect, useState } from "react";
 import { auth } from "../Firebase/Firebase";
-import ChangePassword from "../PasswordChange/Password"; // Import ChangePassword component
-import ChangeEmail from "../EmailChange/ChangeEmail"; // Import ChangeEmail component
-import "./Accounts.css";
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-// ..
-AOS.init();
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../Firebase/Firebase"; // Ensure Firestore is properly imported
+import ChangePassword from "../PasswordChange/Password";
+import ChangeEmail from "../EmailChange/ChangeEmail";
+import AOS from "aos";
 import { motion } from "framer-motion";
+import "aos/dist/aos.css";
+import "./Accounts.css";
 import web from "/images/web.png";
-import { FaArrowLeftLong } from "react-icons/fa6";
-import Aos from "aos";
+
 const Accounts = () => {
   const [userData, setUserData] = useState(null);
   const [currentView, setCurrentView] = useState("main"); // "main", "password", or "email"
-  console.log('currentView:', currentView);
-  console.log('setCurrentView:', setCurrentView);
-  
+  const [loading, setLoading] = useState(true); // Track loading state for Firebase auth
 
+  // Framer Motion Variants for Animation
   const variants = {
     hidden: { opacity: 0, x: -50 },
     visible: { opacity: 1, x: 0 },
     exit: { opacity: 0, x: 50 },
   };
 
-
-useEffect(()=>{
-  AOS.init()
-},[])
-
-
-
-
-
+  // Initialize AOS on component mount
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   useEffect(() => {
-    const user = auth.currentUser;
-    if (user) {
-      setUserData({
-        username: user.displayName || "Not Provided",
-        email: user.email || "Not Provided",
-        phone: user.phoneNumber || "Not Provided",
-      });
-    }
+    const unsubscribe = auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        console.log("Current User:", user); // Logs auth user data
+        try {
+          const userRef = doc(db, "users", user.uid);
+          const docSnap = await getDoc(userRef);
+  
+          if (docSnap.exists()) {
+            console.log("Fetched Firestore Data:", docSnap.data());
+            const data = docSnap.data();
+            setUserData({
+              username: data.username || "Not Provided",
+              email: data.email || "Not Provided",
+              phone: data.phoneNumber || "Not Provided",
+            });
+          } else {
+            console.log("No such document in Firestore!");
+          }
+        } catch (error) {
+          console.error("Error fetching Firestore data:", error);
+        }
+      } else {
+        console.log("No user is signed in.");
+      }
+    });
+  
+    return () => unsubscribe();
+    
   }, []);
+  
+  // console.log("Fetched Firestore Data:", docSnap.data());
+
+ 
 
   return (
     <div className="main">
+      {/* Contact Information Section */}
       <div className="contact-info">
         <p>Contact Information</p>
         {userData ? (
           <div className="info">
             <p>
-              <span className="span-name">UserName:</span>{userData.username}
+              <span className="span-name">UserName:</span> {userData.username}
             </p>
-            <p>    <span className="span-name">UserEmail:</span> 
-           {userData.email}
+            <p>
+              <span className="span-name">UserEmail:</span> {userData.email}
             </p>
-            <p>   <span className="span-name">UserPhone:</span> 
-               {userData.phone}
+            <p>
+              <span className="span-name">UserPhone:</span> {userData.phone}
             </p>
-            <div className="Password-container">
-              <button onClick={() => setCurrentView("password")} className="password-co">
-                Change Password
-              </button>
-              <button onClick={() => setCurrentView("email")} className="password-co">
-                Change Email
-              </button>
-            </div>
           </div>
         ) : (
-          <p>Loading user data...</p>
+          <p>No user data available.</p>
         )}
       </div>
 
-      
-    <div className="main-img">
-      {/* Conditional rendering for forms */}
-      <motion.div
-        key={currentView}
-        initial="hidden"
-        className="animated-view"
-        animate="visible"
-        exit="exit"
-        variants={variants}
-        transition={{ duration: 0.5 }}
-      >
-        {currentView === "main" && (
-          <div className="main-img">
-            <img src={web} alt="open" />
-          </div>
+      {/* Main Image or Forms */}
+      <div className="main-img">
+        <motion.div
+          key={currentView}
+          initial="hidden"
+          className="animated-view"
+          animate="visible"
+          exit="exit"
+          variants={variants}
+          transition={{ duration: 0.5 }}
+        >
+          {currentView === "main" && (
+            <div className="main-img">
+              <img src={web} alt="Profile Section" />
+            </div>
+          )}
+          {currentView === "password" && <ChangePassword />}
+          {currentView === "email" && <ChangeEmail />}
+        </motion.div>
+
+        {/* Back Button */}
+        {currentView !== "main" && (
+          <button
+            className="learn-more"
+            onClick={() => setCurrentView("main")}
+          >
+            <span className="circle" aria-hidden="true">
+              <span className="icon arrow"></span>
+            </span>
+            <span className="button-text">Back</span>
+          </button>
         )}
-        {currentView === "password" && <ChangePassword />}
-        {currentView === "email" && <ChangeEmail />}
-      </motion.div>
-      {/* Cancel Button */}
-      <button class="learn-more">
-  <span class="circle" aria-hidden="true">
-  <span class="icon arrow"></span>
-  </span>
-  <span class="button-text">Back</span>
-</button>
+      </div>
     </div>
-  </div>
   );
 };
 
 export default Accounts;
-
-/* From Uiverse.io by cssbuttons-io */ 
-//     {currentView !== "main" && (
-//   <button
-//   type="button"
-//   className="password"
-//   onClick={() => {
-//     console.log("Cancel button clicked. Navigating to 'main' view.");
-//     setCurrentView("main");
-//   }}
-// >
-//   <span class="circle" aria-hidden="true">
-
-//   </span>
-//   <span class="icon arrow">
-  
-//   </span>
-//   <span class="button-text">Back</span>
-// </button>
-// )}

@@ -1,6 +1,7 @@
 import { Link,} from "react-router-dom";
 import { useCart } from "../CartContext"; // Custom hook to manage cart state
 import "./Cart.css";
+import Pincode from "../Pincode/Pincode";
 
 const Cart = () => {
   const { cart, setCart } = useCart(); // Use cart and setCart from context
@@ -58,41 +59,33 @@ const Cart = () => {
     <div className="cart-items">
       {cart.items && cart.items.length > 0 ? (
         <>
-      
+          <div className="cart-headings">
+            <span className="heading-item">ITEM</span>
+            <span className="heading-price">PRICE</span>
+            <span className="heading-quantity">QUANTITY</span>
+            <span className="heading-total">TOTAL</span>
+          </div>
           {cart.items.map((item, index) => (
             <div className="cart-item" key={index}>
               <div className="item-image1">
                 <img src={item.image} alt={item.name} />
-                <h2 className="name">{item.name}</h2>
               </div>
               <div className="item-details">
-            
-            
-          
-              <div className="item-quantity">
-  <select
-    value={item.quantity}
-    onChange={(e) => updateQuantity(index, parseInt(e.target.value))}
-    className="border border-gray-300 rounded-md p-2 text-gray-700 focus:ring-indigo-500 focus:border-indigo-500"
-  >
-    {Array.from({ length: 10 }, (_, i) => (
-      <option key={i + 1} value={i + 1}>
-        {i + 1}
-      </option>
-    ))}
-  </select>
-  <div className="item-total">
-                ₹{parseFloat((item.price * item.quantity).toFixed(2))}
+                <h2>{item.name}</h2>
               </div>
-</div>
-
-             
               <div className="item-price">
                 <p className="price">₹{item.price}</p>
               </div>
+              <div className="item-quantity">
+                <button onClick={() => updateQuantity(index, -1)} className="cart-button">-</button>
+                <span>{item.quantity}</span>
+                <button onClick={() => updateQuantity(index, 1)} className="cart-button">+</button>
+              </div>
+              <div className="item-total">
+                ₹{parseFloat((item.price * item.quantity).toFixed(2))}
+              </div>
               <div className="item-remove">
                 <button onClick={() => deleteItem(index)}>Remove</button>
-              </div>
               </div>
             </div>
           ))}
@@ -125,15 +118,9 @@ const Cart = () => {
             PROCEED TO CHECKOUT
           </Link>
         </div>
-        <div className="check-service-area">
-          <h3>Check Service Area</h3>
-          <p>Zip/Postal Code</p>
-          <div>
-            <input type="text" placeholder="Enter Zip/Postal Code"  className="area-input"/>
-            <button className="check">Check</button>
-          </div>
-          <p>Note - If your pin code is non-serviceable, we will send it via Indian Speed Post. Delivery may take longer.</p>
-        </div>
+       <div>
+        <Pincode/>
+       </div>
       </div>
     )}
   </div>

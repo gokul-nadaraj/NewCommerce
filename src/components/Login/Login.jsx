@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { auth } from "../Firebase/Firebase";
+import { auth,db } from "../Firebase/Firebase";
+import { doc, setDoc } from "firebase/firestore";
 import { createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
 import { useCart } from "../CartContext";
 import './Login.css'
@@ -21,31 +22,42 @@ const Auth = () => {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-
+  
     // Validate passwords
     if (password !== confirmPassword) {
       setError("Passwords do not match");
       return;
     }
-
+  
     if (password.length < 6) {
       setError("Password should be at least 6 characters long");
       return;
     }
-
+  
     try {
       // Create user with email and password
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
-
-      // Update user's display name with the username
+  
+   
       await updateProfile(user, {
         displayName: username,
       });
+  
 
+      const userRef = doc(db, "users", user.uid); 
+      await setDoc(userRef, {
+        username,
+        email,
+        phoneNumber: phone, 
+      });
+      
+  
       alert(`Signup successful for ${username}! Please log in to continue.`);
-      console.log('user',user)
+      console.log('User data:', user);
+  
       navigate("/cart", { state: { email, cart, username } });
+  
     } catch (error) {
       console.error("Error during signup:", error);
       setError(error.message);

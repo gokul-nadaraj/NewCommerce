@@ -175,7 +175,7 @@ const Delivery = () => {
       <div className="Addres-container-box" onClick={() => handlePopupOpen("add")}>
 
         <p><FaPlus  className="icon-container"/></p>
-        <button >
+        <button  className="address-btn">
           Add a New Address
 
         </button>

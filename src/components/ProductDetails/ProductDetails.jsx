@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 // import { products } from '../../assets/Frontend';
 import { useState } from 'react';
-import products from "../../products.json";
+import products from "../JsonFile/products.json";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import './ProductDetails.css';

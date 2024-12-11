@@ -1,25 +1,61 @@
-import React, { useState } from "react";
-import { toast } from "react-toastify";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "../CartContext";
+import { auth, db } from "../Firebase/Firebase";
+import { doc, getDoc, setDoc, updateDoc, arrayUnion } from "firebase/firestore";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import './Payment.css';
 
-const Payment = ({ user }) => {
-  const [showPaymentMethods, setShowPaymentMethods] = useState(false);
-  const [isRadioChecked, setIsRadioChecked] = useState(false);
+
+const Payment = () => {
+  const { cart, setCart } = useCart();
   const navigate = useNavigate();
+  const [user, setUser] = useState(null);
+  const [showPaymentMethods, setShowPaymentMethods] = useState(false); // State for showing payment methods
+  const [isRadioChecked, setIsRadioChecked] = useState(false); // State for radio button selection
+  
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+      if (!currentUser) {
+        navigate("/login", { state: { fromCheckout: true } });
+      } else {
+        setUser(currentUser);
+      }
+    });
+    return () => unsubscribe();
+  }, [navigate]);
 
   const handleRadioChange = () => {
     setIsRadioChecked(!isRadioChecked);
   };
 
   const paymentHandler = async () => {
+    if (!user) {
+      toast.error("Please log in to complete the Payment.", { autoClose: 6000 });
+      navigate("/login", { state: { fromCheckout: true } });
+      return;
+    }
+
+    const userRef = doc(db, "users", user.uid);
+
     try {
+      const userDoc = await getDoc(userRef);
+      if (!userDoc.exists()) {
+        await setDoc(userRef, {
+          username: user.displayName,
+          email: user.email,
+          orders: [],
+        });
+      }
+
       const orderbody = {
-        amount: 100, 
+        amount: 100, // Amount in paise (You can calculate this dynamically from the cart)
         currency: "INR",
-        receipt: "receiptId_1",
+        receipt: `receipt_${Date.now()}`,
       };
+
       const headers = {
         "Content-Type": "application/json",
         "x-api-key": "nb7yqBXPNZ8RDEsa0s7sS8OxEn9bujNV1c1VK3vc",
@@ -37,23 +73,22 @@ const Payment = ({ user }) => {
         key: "", 
         amount: orderbody.amount,
         currency: orderbody.currency,
-        name: "TinyKarts (YesurajSeelan)",
+        name: "TinyKarts",
         order_id: order.id,
         handler: async (response) => {
-          const body = JSON.stringify(response);
-          const validateRes = await axios.post(
-            "https://178sjvr7ai.execute-api.ap-south-1.amazonaws.com/order/validate",
-            body,
-            { headers }
-          );
+          await updateDoc(userRef, {
+            orders: arrayUnion({ cart, timestamp: new Date().toISOString() }),
+          });
 
+       
+          setCart({ items: [], total: 0 });
           toast.success("Payment successful!", { autoClose: 6000 });
-          navigate("/success", { state: { order: { cart: [] } } });
+          navigate("/success", { state: { order: { cart } } });
         },
         prefill: {
-          name: user?.displayName || "Guest",
-          email: user?.email || "guest@example.com",
-          contact: user?.phoneNumber || "1234567890",
+          name: user.displayName,
+          email: user.email,
+          contact: user.phoneNumber || "1234567890",
         },
         theme: { color: "#3399cc" },
       };
@@ -68,7 +103,10 @@ const Payment = ({ user }) => {
 
   return (
     <>
-      <h1 onClick={() => setShowPaymentMethods(!showPaymentMethods)} className="header">
+      <h1
+        onClick={() => setShowPaymentMethods(!showPaymentMethods)}
+        className="header"
+      >
         3. Payment Methods
       </h1>
       {showPaymentMethods && (
@@ -97,6 +135,7 @@ const Payment = ({ user }) => {
           </div>
         </div>
       )}
+      <ToastContainer />
     </>
   );
 };

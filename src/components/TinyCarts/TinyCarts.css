@@ -1,0 +1,218 @@
+
+
+    body{
+        width: 100vw;
+    }
+    .head1{
+    text-align: center; 
+    margin-top: 100px;
+
+    }
+    .head1 span{
+        margin-top: -26px;
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .head1 .welcome{
+        font-size: 50px;
+        text-align: center;
+    }
+    .para{
+        margin-top: 40px;
+    }
+    .slide p{
+        width: 400px;
+        font-size: 20px;
+        text-align: justify;
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+        color: #01502a;
+        font-family: Arial, Helvetica, sans-serif;
+        gap: 50px;
+        text-shadow: -3px 5px 5px rgba(0,0,0,0.45);
+  
+    }
+
+    .banner{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 90px;
+        margin-right: 170px;
+        
+        
+    }
+    .border-2{
+        border-radius:16%;
+        width: 500px;
+        
+        
+    }
+  
+    .img-round{
+        border-radius:10%;
+        height: 350px;
+    }
+
+    @media  (max-width:1000px){
+
+        .slide p{
+       
+            font-size: 20px;
+            width: 500px;
+            
+        }
+        .banner{
+            display: flex;
+            flex-direction: column;
+            margin-right: 0px;
+        }
+        .border-2{
+            border-radius: 10%;
+        }
+   
+
+
+.img-round{
+    width: 70px;
+    height: 250px;
+    border-radius: 10%;
+}
+
+
+    }
+
+
+    @media  (max-width:425px){
+       
+        .slide p{
+      
+            font-size: 16px;
+            width: 350px;
+            
+        }
+        .head1 .welcome{
+            font-size: 14px;
+            text-align: center;
+        }
+        .banner{
+            display: flex;
+            flex-direction: column;
+            
+        }
+        .border-2{
+            border-radius: 10%;
+            width: 350px;
+        }
+        .img-round{
+               height: fit-content;   
+              border-radius: 10%;
+          }
+   
+
+
+
+
+
+    }
+
+
+    @media  (max-width:320px){
+
+        .slide p{
+          
+            font-size: 15px;
+            width: 230px;
+            
+        }
+        .banner{
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .border-2{
+            border-radius: 10%;
+            width: 220px;
+        }
+        .img-round{
+            width: 20px       ;
+              height: 150px;
+              border-radius: 10%;
+          }
+          .slick-dots li {
+            width: 10px;
+            height: 10px;
+        }
+
+        .head1 span{
+            max-width: 30px;
+            font-size: 10px;
+        }   
+   
+    }
+    @media  (max-width:375px){
+
+        .slide p{
+          
+            font-size: 12px;
+            width: 300px;
+            
+        }
+        .banner{
+            display: flex;
+            flex-direction: column;
+        }
+        .border-2{
+            border-radius: 10%;
+            width: 300px;
+        }
+        .img-round{
+            width: 20px       ;
+              height: 200px;
+              border-radius: 10%;
+          }
+          .slick-dots li {
+            width: 10px;
+            height: 10px;
+        }
+        .head1 span{
+            margin-top: -26px;
+            font-size: 16px;
+            font-weight: 600;
+            
+        }
+   
+    }
+    @media  (max-width:425px){
+
+        .slide p{
+          
+            font-size: 15px;
+            width: 230px;
+            
+        }
+        .banner{
+            display: flex;
+            flex-direction: column;
+        }
+        .border-2{
+            border-radius: 10%;
+            width: 270px;
+        }
+        .img-round{
+            width: 20px       ;
+              height: 170px;
+              border-radius: 10%;
+          }
+          .slick-dots li {
+            width: 10px;
+            height: 10px;
+        }
+        .head1 span{
+            margin-top: -26px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+   
+    }
+    

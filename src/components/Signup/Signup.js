@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { auth } from "../Firebase/firebase";
+import { auth } from "../Firebase/Firebase"
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useCart } from "../CartContext";
 

@@ -14,26 +14,41 @@ import Success from "./components/Success/Success.jsx";
 import Accounts from "./components/Accounts/Accounts.jsx";
 import Password from "./components/PasswordChange/Password.jsx";
 import ChangeEmail from "./components/EmailChange/ChangeEmail.jsx";
-// import Address from "./components/Address/Address.jsx";
 import Delivery from "./components/Delivery/Delivery.jsx";
+import FrontPage from "./components/FrontPage/FrontPage.jsx";
+import Nav from "./components/Nav/Nav.jsx";
+import Craft from "./components/craft/Craft.jsx";
+import Gift from "./components/GiftProduct/Gift.jsx";
+import Organic from "./components/Organicproduct/Organic.jsx";
 
-function App() {
+
+
+
+
+function App() {``
   return (
     <CartProvider>
       <Router>
         <ToastContainer />
-        <Navbar />
+  <Nav/>
         <Routes>
-          <Route path="/" element={<Home />} />
+          
+          <Route path="/" element={<FrontPage />} />
+          <Route path="/products" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/craft" element={<Craft />} />
+          <Route path="/Gift-products" element={<Gift />} />
+          <Route path="/Organic-products" element={<Organic />} />
+          <Route path="/Bedshit-products" element={<Craft />} />
+
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/success" element={<Success />} />
           <Route path="/order-history" element={<OrderHistory />} />
           <Route path="/product/:id" element={<ProductDetails />} />
 
-        
-        <Route path="/Youraccounts" element={<Accounts />} />
+  
+      <Route path="/Youraccounts" element={<Accounts />} />
         <Route path="/YourAddress" element={<Delivery  />} />
         <Route path="/change-password" element={<Password />} />
         <Route path="/change-email" element={<ChangeEmail />} />

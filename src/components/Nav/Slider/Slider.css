@@ -1,0 +1,71 @@
+Wrapper for the slider
+.slider-wrapper {
+  width: 100%; 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  margin-top: 30px;
+  /* overflow: hidden; */
+}
+.slick-list {
+  overflow: hidden !important;
+}
+
+.slick-track {
+  display: flex !important;
+}
+
+
+/* Slick Slider container */
+.slick-slider {
+
+  align-items: center;
+  justify-content: center;
+}
+
+/* Slide */
+.slide {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Images */
+.slider-image {
+  width: 100%; 
+  height: auto;
+  max-height: 500px; 
+  object-fit: cover; 
+}
+
+/* Dots Styling */
+.slick-dots li button:before {
+  color: white;
+  font-size: 12px;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #3399cc;
+}
+
+
+@media screen and (max-width: 768px) {
+  .slider-wrapper {
+    max-width: 90%; 
+  }
+
+  .slider-image {
+    max-height: 300px; 
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .slider-wrapper {
+    max-width: 100%; 
+  }
+
+  .slider-image {
+    max-height: 200px;
+  }
+}

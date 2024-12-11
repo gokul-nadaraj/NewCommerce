@@ -9,6 +9,8 @@ import "react-toastify/dist/ReactToastify.css";
 import Payment from "../Payment/Payment";
 import Order from "../Order/Order";
 
+import { Link } from "react-router-dom";
+
 const Checkout = () => {
   const { cart, setCart } = useCart();
   const navigate = useNavigate();
@@ -24,9 +26,6 @@ const Checkout = () => {
     });
     return () => unsubscribe();
   }, [navigate]);
-
- 
-
 
 
 const [formData, setFormData] = useState({
