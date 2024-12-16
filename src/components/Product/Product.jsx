@@ -46,7 +46,7 @@ Aos.init()
        
 <div data-aos="fade-down-left" data-aos-delay="300" data-aos-duration="1000"
             data-aos-easing="ease">
-<Link to='/Bedshit-products'>
+<Link to='/Bedsheet-products'>
 <div className='box'><img src={img3}alt="" /></div>
 
 </Link>

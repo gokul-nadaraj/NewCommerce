@@ -99,6 +99,10 @@
 .popup form {
   display: flex;
   flex-direction: column;
+
+}
+.popup h2{
+  text-align: center;
 }
 
 .popup form input {
@@ -106,7 +110,7 @@
   padding: 10px;
   font-size: 14px;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 10px;
 }
 
 .popup form button {
@@ -161,5 +165,9 @@
   .saved-container-box p,
   .saved-container-box button {
     font-size: 12px;
+  }
+  .popup{
+    width: 100%;
+    height: 100%;
   }
 }

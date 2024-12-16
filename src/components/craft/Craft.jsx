@@ -99,16 +99,22 @@ const Craft = () => {
                 <h1>{product.name}</h1>
                 <p>{product.description}</p>
                 <p>{product.star}</p>
-                <p className="price">Price: ₹{product.price}</p>
+                <p className="price">
+                Price:{" "}
+        {new Intl.NumberFormat("en-IN", {
+          style: "currency",
+          currency: "INR",
+        }).format(product.price)}
+                </p>
 
                 {/* Conditional rendering for Add/Quantity controls */}
                 {cartItem ? (
                   <div className="quantity-controls">
-                    <button onClick={() => handleDecrement(product._id)} className="btn2">
+                    <button onClick={() => handleDecrement(product._id)} className="quantity-ever">
                       -
                     </button>
                     <span>{cartItem.quantity}</span>
-                    <button onClick={() => handleIncrement(product._id)} className="btn12">
+                    <button onClick={() => handleIncrement(product._id)} className="quantity-ever">
                       +
                     </button>
                   </div>

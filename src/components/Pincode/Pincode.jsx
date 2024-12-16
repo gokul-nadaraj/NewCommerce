@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import './pincode.css'
+
+
 
 const Pincode = () => {
     const [pincode, setPincode] = useState("");
@@ -8,6 +11,7 @@ const Pincode = () => {
     const [loading, setLoading] = useState(false);
     const [apiToken, setApiToken] = useState(null);
     const [selectedCourier, setSelectedCourier] = useState(null);
+
 
     const AUTH_API_URL = "https://apiv2.shiprocket.in/v1/external/auth/login";
     const PINCODE_API_URL =
@@ -87,55 +91,87 @@ const Pincode = () => {
     const handleCourierSelect = (index) => {
         setSelectedCourier(courierDetails[index]);
     };
+
+  
+
+
     return (
-        <div style={{ padding: "1rem", background: "#f8f9fa" }}>
+        <div className="pindoe-container">
             <h4>Check Pincode Serviceability</h4>
-            <input
-                type="text"
-                value={pincode}
-                onChange={(e) => setPincode(e.target.value)}
-                placeholder="Enter your pincode"
-                style={{
-                    padding: "0.5rem",
-                    marginRight: "0.5rem",
-                    border: "1px solid #ddd",
-                    borderRadius: "4px",
-                }}
-            />
-            <button
+<div className="main-container1">
+
+
+
+
+            <div className="form-control">
+      <input
+        type="text"
+        value={pincode}
+        required
+        onChange={(e) => setPincode(e.target.value)}
+      />
+      <label>
+      <span style={{ transitionDelay: "0ms" }}>E</span>
+<span style={{ transitionDelay: "50ms" }}>n</span>
+<span style={{ transitionDelay: "100ms" }}>t</span>
+<span style={{ transitionDelay: "150ms" }}>e</span>
+<span style={{ transitionDelay: "200ms" }}>r</span>
+<span>&nbsp;</span>
+<span style={{ transitionDelay: "300ms" }}>Y</span>
+<span style={{ transitionDelay: "350ms" }}>o</span>
+<span style={{ transitionDelay: "400ms" }}>u</span>
+<span style={{ transitionDelay: "450ms" }}>r</span>
+<span>&nbsp;</span>
+<span style={{ transitionDelay: "0ms" }}>P</span>
+<span style={{ transitionDelay: "50ms" }}>i</span>
+<span style={{ transitionDelay: "100ms" }}>n</span>
+<span style={{ transitionDelay: "150ms" }}>c</span>
+<span style={{ transitionDelay: "200ms" }}>o</span>
+<span style={{ transitionDelay: "250ms" }}>d</span>
+<span style={{ transitionDelay: "300ms" }}>e</span>
+
+      </label>
+      </div>
+      <div className="button-main">
+      <button class="comic-button"
+
                 onClick={checkPincode}
                 disabled={loading || !apiToken}
-                style={{
-                    padding: "0.5rem 1rem",
-                    background: "#007bff",
-                    color: "#fff",
-                    border: "none",
-                    borderRadius: "4px",
-                }}
+          
             >
                 {loading ? "Checking..." : "Check"}
             </button>
-            {status && <p style={{ marginTop: "1rem" }}>{status}</p>}
+      </div>
+      {status && <p className="status">{status}</p>} 
+      </div>  
+  
+     
             {courierDetails.length > 0 ? (
                 <form>
                     {courierDetails.map((courier, index) => (
-                        <div key={index} className="mb-4">
-                            <label className="flex items-center">
+                        <div key={index} className="main-container">
+                        
+                         <div className="radio-container"> 
+                         <label>
                                 <input
                                     type="radio"
+                                    className="audio"
                                     name="courier"
                                     value={index}
                                     onChange={() => handleCourierSelect(index)}
-                                    className="mr-4 cursor-pointer"
+                                    
                                 />
-                                <div>
-                                    <strong>Courier Name:</strong> {courier.courier_name}<br />
-                                    <strong>City:</strong>{" "}
-                                    {courier.city || "N/A"}<br />
-                                    <strong>ETD:</strong> {courier.etd || "N/A"}<br />
-                                    <strong>COD Charges:</strong> ₹{courier.cod_charges || "N/A"}
-                                </div>
-                            </label>
+                                  </label>
+                         </div>
+                            
+                                  
+                         <div className="courier-container">
+    We delivered your order via <strong>{courier.courier_name}</strong> in <strong>{courier.city || "N/A"}</strong>. 
+    The estimated delivery date is <strong>{courier.etd || "N/A"}</strong>, and Cash on Delivery charges are 
+    <strong> ₹{courier.cod_charges || "N/A"}</strong>. Thank you for choosing our service!
+</div>
+
+                          
                         </div>
                     ))}
                 </form>
@@ -144,16 +180,18 @@ const Pincode = () => {
             )}
 
             {selectedCourier && (
-                <div className="mt-4 p-4 border rounded bg-gray-100">
-                    <h2 className="text-xl font-bold">Selected Courier Details</h2>
-                    <p><strong>Courier Name:</strong> {selectedCourier.courier_name}</p>
-                    <p>
-                        <strong>Estimated Delivery Days:</strong>{" "}
-                        {selectedCourier.estimated_delivery_days || "N/A"}
-                    </p>
-                    <p><strong>ETD:</strong> {selectedCourier.etd || "N/A"}</p>
-                    <p><strong>COD Charges:</strong> ₹{selectedCourier.cod_charges || "N/A"}</p>
-                </div>
+                <div className='seleteced-conatiner'>
+              
+                    <h2>Selected Courier Details</h2>
+                    <div className="courier-container">
+    Your order will be delivered by <strong>{selectedCourier.courier_name}</strong>. 
+    The estimated delivery time is <strong>{selectedCourier.estimated_delivery_days || "N/A"} days</strong>, 
+    with an expected delivery date of <strong>{selectedCourier.etd || "N/A"}</strong>. 
+    Cash on Delivery charges for this order are <strong>₹{selectedCourier.cod_charges || "N/A"}</strong>. 
+    Thank you for shopping with us!
+</div>
+
+                    </div>
             )}
         </div>
     );

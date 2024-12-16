@@ -490,9 +490,8 @@ const [formData, setFormData] = useState({
           </div>
 <div className="total-details1">
 <p className="amount">Total Amount:</p>
-<span>₹{cart.items.reduce((total, item) => total + item.total, 0) + 900}</span>
+<span>₹{parseFloat(cart.items.reduce((total, item) => total + item.total, 0)).toFixed(2)}</span>
 </div>
-
 </div>
 
   </div>

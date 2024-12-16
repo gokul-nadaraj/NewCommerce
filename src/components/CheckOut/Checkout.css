@@ -257,7 +257,7 @@ font-weight: 400;
 /* Toggle Button Styling */
 .toggle {
   position: absolute;
-  top: 0;
+  top: -10px;
   right: 10px;
   margin-top: 12px;
   padding: 8px 16px;
@@ -361,6 +361,10 @@ font-weight: 400;
     padding: 14px;
     max-width: 90%;
   }
+  .toggle{
+    position: absolute;
+    top: 0px;
+  }
 
   .price-details-container h2 {
     font-size: 18px;
@@ -380,7 +384,10 @@ font-weight: 400;
     padding: 12px;
     max-width: 95%;
   }
-
+  .toggle{
+    position: absolute;
+    top: 0px;
+  }
   .price-details-container h2 {
     font-size: 16px;
   }
@@ -417,7 +424,10 @@ font-weight: 400;
   .popup-container {
     padding: 10px; /* Add some padding to the popup */
   }
-
+  .toggle{
+    position: absolute;
+    top: 0px;
+  }
   .form-container {
     padding: 15px; 
     width: 90%; 
@@ -523,7 +533,10 @@ font-weight: 400;
     width: 100%;
     font-size: 20px;
   }
-
+  .toggle{
+    position: absolute;
+    top: 0px;
+  }
   .form-container {
     max-width: 100%; 
     flex: 3;

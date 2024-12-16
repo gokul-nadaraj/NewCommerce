@@ -20,6 +20,8 @@ import Nav from "./components/Nav/Nav.jsx";
 import Craft from "./components/craft/Craft.jsx";
 import Gift from "./components/GiftProduct/Gift.jsx";
 import Organic from "./components/Organicproduct/Organic.jsx";
+import Bedproduct from "./components/Bedsheet/Bedproduct.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 
 
 
@@ -39,7 +41,7 @@ function App() {``
           <Route path="/craft" element={<Craft />} />
           <Route path="/Gift-products" element={<Gift />} />
           <Route path="/Organic-products" element={<Organic />} />
-          <Route path="/Bedshit-products" element={<Craft />} />
+          <Route path="/Bedsheet-products" element={<Bedproduct />} />
 
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
@@ -56,6 +58,7 @@ function App() {``
 
           
         </Routes>
+        < Footer/>
       </Router>
     </CartProvider>
   );

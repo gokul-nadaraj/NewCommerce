@@ -2,9 +2,24 @@ import React from 'react'
 import { useState } from 'react';
 import { useCart } from "../CartContext";
 import './Order.css'
+import { useNavigate } from 'react-router-dom';
 const Order = () => {
     const [showOrderSummary, setShowOrderSummary] = useState(false);
     const { cart, setCart } = useCart();
+
+    const navigate= useNavigate()
+
+
+
+    const handleViewProductDetails = (id) => {
+      if (id) {
+        console.log("Navigating to product details for ID:", id);
+        navigate(`/product/${id}`);
+      } else {
+        console.error("Product ID is undefined");
+      }
+    };
+    
   return(
     <>
     <h1 onClick={() => setShowOrderSummary(!showOrderSummary)} className="header">2. Order Summary</h1>
@@ -27,6 +42,7 @@ const Order = () => {
                 <tr key={index}>
                   <td>
                     <img
+                    onClick={() => handleViewProductDetails(item._id)} 
                       src={item.image}
                       alt={item.name}
                       className="checkout-item-image"

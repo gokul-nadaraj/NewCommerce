@@ -4,14 +4,46 @@ import { auth, db } from "../Firebase/Firebase";
 import { doc, getDoc } from "firebase/firestore";
 import './Orderhistory.css'
 
+import { useCart } from "../CartContext";
 
-
-const handlesubmit = (e)=>{
-  e.prventDefault
-}
 
 
 const OrderHistory = () => {
+
+  const { cart, setCart } = useCart();
+  const handleBuyAgain = (item) => {
+    // Check if the item is already in the cart
+    const existingProductIndex = cart.items.findIndex((cartItem) => cartItem._id === item._id);
+    let updatedCart;
+
+    if (existingProductIndex >= 0) {
+      // If product already in cart, increase quantity
+      updatedCart = cart.items.map((cartItem, index) => {
+        if (index === existingProductIndex) {
+          return {
+            ...cartItem,
+            quantity: cartItem.quantity + 1,
+            total: (cartItem.quantity + 1) * cartItem.price,
+          };
+        }
+        return cartItem;
+      });
+    } else {
+      // If product not in cart, add it
+      updatedCart = [
+        ...cart.items,
+        { ...item, quantity: 1, total: item.price },
+      ];
+    }
+
+    // Update the cart state
+    const newTotal = updatedCart.reduce((sum, cartItem) => sum + cartItem.total, 0);
+    setCart({ items: updatedCart, total: newTotal });
+
+    // Redirect to the cart page
+    navigate("/cart");
+  };
+
   const [orders, setOrders] = useState([]);
   const navigate = useNavigate();
 
@@ -37,7 +69,7 @@ const OrderHistory = () => {
 
   return (
  
-<div className="order-history-container" onSubmit={handlesubmit}>
+<div className="order-history-container">
   <h1>Your Orders</h1>
   {orders.length > 0 ? (
     orders.map((order, index) => (
@@ -79,7 +111,7 @@ const OrderHistory = () => {
                   />
                   <div className="order-details">
                     <p className="item-name">{item.name}</p>
-                    <button className="buy-again-btn">Buy  It Again</button>
+                    <button className="buy-again-btn"    onClick={() => handleBuyAgain(item)}>Buy  It Again</button>
                   </div>
                 </div>
               </div>

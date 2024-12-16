@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import shp1 from "/images/shop1.jpg";
-import shp2 from "/images/shp2.avif";
-import shp3 from "/images/shop3.jpg"; // Adjusted path
+import shp1 from "/images/Govindaraja1.webp";
+import shp2 from "/images/Govindaraja2.webp";
+import shp3 from "/images/Govindaraja2.webp"; // Adjusted path
 import "../TinyCarts/TinyCarts.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";

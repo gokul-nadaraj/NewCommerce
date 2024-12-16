@@ -6,12 +6,12 @@
     "name": "Wireless Headphones",
     "description": "High-quality wireless headphones with noise cancellation.",
     "price": 79.99,
-    "image": "/images/craft1.png",
+    "image": "/images/Product _1Main.webp",
     "images":[
-      "/images/product_11.png",
-      "/images/product_12.png",
-      "/images/product1.png",
-      "/images/product_13.png"
+      "/images/Product _2.webp",
+      "/images/Product _3.webp",
+      "/images/Product _1Main.webp",
+      "/images/Product _4.webp"
 
     ],
     "rating": 4.7

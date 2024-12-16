@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { auth,db } from "../Firebase/Firebase";
 import { doc, setDoc } from "firebase/firestore";
+import { FaEnvelope, FaPhone, FaLock, FaUser } from 'react-icons/fa';
+
 import { createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
 import { useCart } from "../CartContext";
 import './Login.css'
@@ -64,6 +66,7 @@ const Auth = () => {
     }
   };
 
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -94,63 +97,82 @@ const Auth = () => {
       <h1>{isSignup ? "Sign Up" : isResettingPassword ? "Reset Password" : "Login"}</h1>
   
       <form onSubmit={isResettingPassword ? handlePasswordReset : isSignup ? handleSignup : handleLogin}>
-        <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-  
-        {isSignup && (
-          <>
-            <div>
-              <label>Username:</label>
-              <input
-                type="text"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                required
-              />
-            </div>
-            <div>
-              <label>Phone:</label>
-              <input
-                type="tel"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                required
-                pattern="^[0-9]{10}$"
-              />
-            </div>
-          </>
-        )}
-  
-        {!isResettingPassword && (
-          <div>
-            <label>Password:</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-        )}
-  
-        {isSignup && (
-          <div>
-            <label>Confirm Password:</label>
-            <input
-              type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-            />
-          </div>
-        )}
+
+
+      <div>
+  <label>Email:</label>
+  <div className="input-wrapper">
+    <FaEnvelope className="input-icon" />
+    <input
+      type="email"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      required
+    />
+  </div>
+</div>
+
+{isSignup && (
+  <>
+    <div>
+      <label>Username:</label>
+      <div className="input-wrapper">
+        <FaUser className="input-icon" />
+        <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          required
+        />
+      </div>
+    </div>
+
+    <div>
+      <label>Phone:</label>
+      <div className="input-wrapper">
+        <FaPhone className="input-icon" />
+        <input
+          type="tel"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          required
+          pattern="^[0-9]{10}$"
+        />
+      </div>
+    </div>
+  </>
+)}
+
+{!isResettingPassword && (
+  <div>
+    <label>Password:</label>
+    <div className="input-wrapper">
+      <FaLock className="input-icon" />
+      <input
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        required
+      />
+    </div>
+  </div>
+)}
+
+{isSignup && (
+  <div>
+    <label>Confirm Password:</label>
+    <div className="input-wrapper">
+      <FaLock className="input-icon" />
+      <input
+        type="password"
+        value={confirmPassword}
+        onChange={(e) => setConfirmPassword(e.target.value)}
+        required
+      />
+    </div>
+  </div>
+)}
+
   
         {error && <p style={{ color: "red" }}>{error}</p>}
   

@@ -51,7 +51,7 @@ const Payment = () => {
       }
 
       const orderbody = {
-        amount: 100, // Amount in paise (You can calculate this dynamically from the cart)
+        amount:  Math.round(cart.items.reduce((total, item) => total + item.total, 0) * 100), // Amount in paise
         currency: "INR",
         receipt: `receipt_${Date.now()}`,
       };

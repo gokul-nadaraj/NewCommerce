@@ -270,6 +270,15 @@ const Delivery = () => {
                 setFormData({ ...formData, addressLine2: e.target.value })
               }
             />
+               <input
+              type="number"
+              placeholder="Phone Number"
+              value={formData.mobilenumber}
+              onChange={(e) =>
+                setFormData({ ...formData, mobilenumber: e.target.value })
+              }
+              required
+            />
             <input
               type="text"
               placeholder="State"
@@ -297,15 +306,7 @@ const Delivery = () => {
               }
               required
             />
-            <input
-              type="number"
-              placeholder="Phone Number"
-              value={formData.mobilenumber}
-              onChange={(e) =>
-                setFormData({ ...formData, mobilenumber: e.target.value })
-              }
-              required
-            />
+         
             <button type="submit">
               {formMode === "add" ? "Add Address" : "Save Changes"}
             </button>

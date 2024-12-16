@@ -1,12 +1,14 @@
 import React from 'react'
-import sale from '/images/sale1.jpg'; 
-import sale2 from '/images/shop2.jpg'; 
-import User from '/images/banner.jpg'; 
+import sale from '/images/yarn.webp'; 
+import sale2 from '/images/cotton.webp'; 
+import User from '/images/Powermachine.webp'; 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import '../TinyCarts/TinyCarts.css';
+// import '../TinyCarts/TinyCarts.css';
 // import Testimonials from '../Nav/Slider/estimonials';
+
+import '../Vision/vision.css'
 
 const Vision = () => {
     
@@ -28,7 +30,7 @@ const Vision = () => {
         </div>
 
         
-        <div className='banner'>
+        <div className='banner1'>
           
 
             <div className='banner-1'> 
@@ -48,7 +50,7 @@ const Vision = () => {
                 </div>
             </div>
             <div className='slide para'>
-              <p data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">We believe in creating a sustainable
+              <p data-aos="fade-left" className='para1' data-aos-delay="200" data-aos-duration="1000">We believe in creating a sustainable
 platform where rural talent meets global
 demand. Tinykarts is not just an ecommerce
 site; it’s a movement to

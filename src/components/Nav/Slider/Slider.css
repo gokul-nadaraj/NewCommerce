@@ -1,11 +1,10 @@
-Wrapper for the slider
 .slider-wrapper {
   width: 100%; 
   max-width: 1200px; 
   margin: 0 auto; 
   margin-top: 30px;
-  /* overflow: hidden; */
 }
+
 .slick-list {
   overflow: hidden !important;
 }
@@ -14,15 +13,16 @@ Wrapper for the slider
   display: flex !important;
 }
 
+.slick-dots {
+  display: block !important; /* Ensure it's visible */
+}
 
-/* Slick Slider container */
+
 .slick-slider {
-
   align-items: center;
   justify-content: center;
 }
 
-/* Slide */
 .slide {
   position: relative;
   width: 100%;
@@ -31,24 +31,33 @@ Wrapper for the slider
   justify-content: center;
 }
 
-/* Images */
+
 .slider-image {
-  width: 100%; 
+  width: 100%;
   height: auto;
-  max-height: 500px; 
-  object-fit: cover; 
+  max-height: 500px;
+
 }
 
-/* Dots Styling */
 .slick-dots li button:before {
-  color: white;
-  font-size: 12px;
+color: gray;
+font-size: 19px;
+
 }
 
 .slick-dots li.slick-active button:before {
-  color: #3399cc;
+  color: #29cb3f;
 }
+@media screen and (max-width: 1000px) {
+  .slider-wrapper {
+    max-width: 100%;
+  }
 
+  .slider-image {
+    max-height: 400px;
+    object-fit: cover; 
+}
+}
 
 @media screen and (max-width: 768px) {
   .slider-wrapper {
@@ -67,5 +76,15 @@ Wrapper for the slider
 
   .slider-image {
     max-height: 200px;
+  }
+}
+
+@media screen and (min-width: 1001px) {
+  .slick-dots {
+    display: block; 
+    position: absolute;
+    display: flex;
+    gap: 10px;
+
   }
 }

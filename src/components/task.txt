@@ -1,0 +1,31 @@
+
+
+ task allocate on 11/12/2024 Tasks
+
+1.Doller change -Gokul -  = complted
+2.Mobile Number code update -gokul = complted   
+4.Image resplacement -Gokul= completed
+5.dots and cosmetics changes -Gokul =completed
+6.Add Contunie shopiing btn in cart page -Manoj = Completed
+7.Integration of pincode checker -Gokul = Completed
+8.Change in Ui When cart is empty and add continue shopping btn -manoj = Complted
+12.Check Your order page and success page   -Gokul 1 = Completed
+14.When i hover product it show a all product category title -Manoj or Gokul =  Completed
+
+
+ Pending Tasks Of 11/12/2024
+
+1.Dollar Change-Gokul = Complted
+2.Footer -Gokul =completed
+3.cm1 in cart page when i click image or produt name it navigate to details page of product  -manoj = completed
+4.add product price in while doing payment -Gokul =completed
+5.Replace all alert messsage respective with popup messsage -Manoj = completed
+6.13.Design Contact page -manoj
+
+ New task allocate on 13/12/2024
+
+1.add product specification in product details page -Gokul
+2.buy it again check -Gokul =complted
+3.Make a Para of Pincode checker address -Gokul = compled
+3. 3d effect and navbar alligns  in our Sellan Graphics website project -manoj
+

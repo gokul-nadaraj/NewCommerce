@@ -1,12 +1,11 @@
-import { Link,} from "react-router-dom";
+import { Link, useNavigate,} from "react-router-dom";
 import { useCart } from "../CartContext"; // Custom hook to manage cart state
 import "./Cart.css";
 import Pincode from "../Pincode/Pincode";
-
 const Cart = () => {
   const { cart, setCart } = useCart(); // Use cart and setCart from context
  
-
+const navigate=useNavigate()
   // Update item quantity in the cart
 
   const updateQuantity = (index, delta) => {
@@ -14,6 +13,8 @@ const Cart = () => {
       console.error("Cart items are not defined or invalid");
       return;
     }
+
+
 
     const newItems = cart.items.map((item, i) => {
       if (i === index) {
@@ -50,8 +51,17 @@ const Cart = () => {
     setCart({ items: newItems, total: newTotal });
   };
 
-
-
+  
+  const handleViewProductDetails = (id) => {
+    if (id) {
+      console.log("Navigating to product details for ID:", id);
+      navigate(`/product/${id}`);
+    } else {
+      console.error("Product ID is undefined");
+    }
+  };
+  
+  
 
   return (
    
@@ -68,7 +78,8 @@ const Cart = () => {
           {cart.items.map((item, index) => (
             <div className="cart-item" key={index}>
               <div className="item-image1">
-                <img src={item.image} alt={item.name} />
+              <img src={item.image} alt={item.name} onClick={() => handleViewProductDetails(item._id)} />
+
               </div>
               <div className="item-details">
                 <h2>{item.name}</h2>

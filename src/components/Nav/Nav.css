@@ -24,10 +24,6 @@
   justify-content: center;
 }
 
-.nav-links li{
-  list-style: none;
-}
-
 .nav-links {
   display: flex;
   gap: 20px;

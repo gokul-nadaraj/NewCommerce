@@ -101,32 +101,36 @@ const Gift = () => {
                 <h1>{product.name}</h1>
                 <p>{product.description}</p>
                 <p>{product.star}</p>
-                <p className="price">Price: ₹{product.price}</p>
+                <p className="price">
+                Price:{" "}
+        {new Intl.NumberFormat("en-IN", {
+          style: "currency",
+          currency: "INR",
+        }).format(product.price)}
+                </p>
 
                 {/* Conditional rendering for Add/Quantity controls */}
                 {cartItem ? (
                   <div className="quantity-controls">
-                    <button onClick={() => handleDecrement(product._id)} className="btn2">
+                    <button onClick={() => handleDecrement(product._id)} className="quantity-ever">
                       -
                     </button>
                     <span>{cartItem.quantity}</span>
-                    <button onClick={() => handleIncrement(product._id)} className="btn12">
+                    <button onClick={() => handleIncrement(product._id)} className="quantity-ever">
                       +
                     </button>
                   </div>
                 ) : (
-                    <button
-                    className="cssbuttons-io"
-                    onClick={() => handleAddToCart(product)} >
-                    <span>
-                  
-                    
-                    Add To Cart
-                    </span>
-             
-                  
-                  </button>
+           
+<button type="button" className="button" onClick={() => handleAddToCart(product)}>
+  <span class="button__text">Add Item</span>
+  <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+</button>
+
+
                 )}
+
+
               </div>
             );
           })}
