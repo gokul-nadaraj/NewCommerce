@@ -11,6 +11,7 @@ import { FaHeart, FaUserCircle, FaBars } from "react-icons/fa";
 import logo from "/images/logo.png"; // Adjusted image path
 import "./Nav.css"; // Replace this with your CSS file path
 import { toast } from "react-toastify";
+
 const Navbar = () => {
   const [user] = useAuthState(auth);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
