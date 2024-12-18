@@ -27,23 +27,25 @@ const TinyCarts = () => {
     <div>
       <section>
         <div className="head1">
-          <h1 className="welcome">Welcome to Tinykarts </h1>
-          <span> Empowering Local Artisans, Connecting Global Markets</span>
+        <h1 className=" text text-4xl sm:text-6xl font-bold text-indigo-700 animate-bounce transition duration-500 ease-in-out">
+            Welcome to <span className="text-teal-500-4xl text ">Tinykarts</span>
+          </h1>
+          <span id="class"> Empowering Local Artisans, Connecting Global Markets</span>
         </div>
 
         <div className="banner">
           <div className="slide">
-            <p
-              data-aos="fade-right"
-              data-aos-delay="100"
-              data-aos-duration="1000"
-            >
-              At Tinykarts, we bridge the gap between village craftsmanship and
-              the global marketplace. Our platform is dedicated to showcasing
-              the talent and creativity of small-scale manufacturers from rural
-              communities, bringing their unique, high-quality products to
-              customers worldwide.
-            </p>
+          <p
+        data-aos="fade-right"
+        data-aos-delay="100"
+        data-aos-duration="1000"
+        className=" "
+      >
+        At Tinykarts, we bridge the gap between village craftsmanship and the
+        global marketplace. Our platform is dedicated to showcasing the talent and
+        creativity of small-scale manufacturers from rural communities, bringing their
+        unique, high-quality products to customers worldwide.
+      </p>
           </div>
 
           <div className="banner-1">

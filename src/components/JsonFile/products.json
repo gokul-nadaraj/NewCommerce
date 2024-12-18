@@ -1,95 +1,587 @@
-
 [
-
   {
-    "_id": 31,
-    "name": "Wireless Headphones",
+    "_id": 1,
+    "name": "Govindaraja 100% Cotton ",
     "description": "High-quality wireless headphones with noise cancellation.",
     "price": 79.99,
     "image": "/images/Product _1Main.webp",
-    "images":[
-      "/images/Product _2.webp",
-      "/images/Product _3.webp",
-      "/images/Product _1Main.webp",
-      "/images/Product _4.webp"
-
+    "images": [
+      "/images/Product_12.webp",
+      "/images/Product_3.webp",
+      "/images/Product_1Main.webp",
+      "/images/Product_4.webp"
     ],
-    "rating": 4.7
+    "rating": 4.7,
+    "material": "Cotton",
+    "color": "Multicolour",
+    "brand": "Tinykarts",
+    "specialFeature": "Fade Resistant",
+    "style": "Indian",
+    "blanketForm": "Comforter",
+    "ageRange": "Adult",
+    "productDimensions": "2.28L x 1.52W Meters",
+    "theme": "Floral",
+    "pattern": "Floral"
   },
-  {
-    "_id": 32,
-    "name": "Smartwatch",
-    "description": "High-quality wireless headphones with noise cancellation.",
-    "price": 99.99,
-    "image": "/images/craft2.png",
-    "images":[
-      "/images/product_22.png",
-      "/images/product_23.png",
-      "/images/product_21.png",
-      "/images/product2.png"
 
-    ],
-    "rating": 4.2
-  },
   {
-    "_id": 33,
-    "name": "Bluetooth Speaker",
-    "description": "Portable Bluetooth speaker with high-quality sound.",
-    "price": 49.99,
-    "image": "/images/craft3.png",
-    "images":[
-      "/images/product_32.png",
-      "/images/product_33.png",
-      "/images/product3.png",
-      "/images/product_33.png"
+      "_id": 2,
+      "name": "Govindaraja 100% Cotton ",
+      "description": "High-quality wireless headphones with noise cancellation.",
+      "price": 99.99,
+      "image": "/images/bed2.png",
+      "images": [
+        "/images/Product _22.png",
+        "/images/Product _23.png",
+        "/images/Product _21.png",
+        "/images/Product2.png"
+      ],
+      "rating": 4.2,
+      "material": "Cotton",
+      "color": "Multicolour",
+      "brand": "Tinykarts",
+      "specialFeature": "Fade Resistant",
+      "style": "Indian",
+      "blanketForm": "Comforter",
+      "ageRange": "Adult",
+      "productDimensions": "2.28L x 1.52W Meters",
+      "theme": "Floral",
+      "pattern": "Floral"
+    },
+    {
+      "_id": 3,
+      "name": "Govindaraja 100% Cotton ",
+      "description": "High-quality wireless headphones with noise cancellation.",
+      "price": 49.99,
+      "image": "/images/Product _1Main.webp",
+      "images": [
+        "/images/Product _32.png",
+        "/images/Product _33.png",
+        "/images/Product3.png",
+        "/images/Product_33.png"
+      ],
+      "rating": 5,
+      "material": "Cotton",
+      "color": "Multicolour",
+      "brand": "Tinykarts",
+      "specialFeature": "Fade Resistant",
+      "style": "Indian",
+      "blanketForm": "Comforter",
+      "ageRange": "Adult",
+      "productDimensions": "2.28L x 1.52W Meters",
+      "theme": "Floral",
+      "pattern": "Floral"
+    },
+    {
+      "_id": 4,
+      "name": "Govindaraja 100% Cotton ",
+      "description": "High-quality wireless headphones with noise cancellation.",
+      "price": 179.99,
+      "image": "/images/Product _1Main.webp",
+      "images": [
+        "/images/Product _42.png",
+        "/images/Product _43.png",
+        "/images/Product _41.png",
+        "/images/Product4.png"
+      ],
+      "rating": 4.2,
+      "material": "Cotton",
+      "color": "Multicolour",
+      "brand": "Tinykarts",
+      "specialFeature": "Fade Resistant",
+      "style": "Indian",
+      "blanketForm": "Comforter",
+      "ageRange": "Adult",
+      "productDimensions": "2.28L x 1.52W Meters",
+      "theme": "Floral",
+      "pattern": "Floral"
+    },
+    {
+      "_id": 5,
+      "name": "Govindaraja 100% Cotton ",
+      "description": "High-quality wireless headphones with noise cancellation.",
+      "price": 19.99,
+      "image": "/images/Product _1Main.webp",
+      "images": [
+        "/images/Product _52.png",
+        "/images/Product _53.png",
+        "/images/Product _51.png",
+        "/images/Product5.png"
+      ],
+      "rating": 4.7,
+      "material": "Cotton",
+      "color": "Multicolour",
+      "brand": "Tinykarts",
+      "specialFeature": "Fade Resistant",
+      "style": "Indian",
+      "blanketForm": "Comforter",
+      "ageRange": "Adult",
+      "productDimensions": "2.28L x 1.52W Meters",
+      "theme": "Floral",
+      "pattern": "Floral"
+    },
+    {
+      "_id": 6,
+      "name": "Govindaraja 100% Cotton ",
+      "description": "High-quality wireless headphones with noise cancellation.",
+      "price": 79.99,
+      "image": "/images/bed6.png",
+      "images": [
+        "/images/Product _22.png",
+        "/images/Product _23.png",
+        "/images/Product _21.png",
+        "/images/Product2.png"
+      ],
+      "rating": 4.7,
+      "material": "Cotton",
+      "color": "Multicolour",
+      "brand": "Tinykarts",
+      "specialFeature": "Fade Resistant",
+      "style": "Indian",
+      "blanketForm": "Comforter",
+      "ageRange": "Adult",
+      "productDimensions": "2.28L x 1.52W Meters",
+      "theme": "Floral",
+      "pattern": "Floral"
+    },
+    {
+      "_id": 11,
+      "name": "Govindaraja 100% Cotton ",
+      "description": "High-quality wireless headphones with noise cancellation.",
+      "price": 79.99,
+      "image": "/images/gift1.png",
+      "images": [
+        "/images/Product _11.png",
+        "/images/Product _12.png",
+        "/images/Product1.png",
+        "/images/Product _13.png"
+      ],
+      "rating": 4.7,
+      "material": "Cotton",
+      "color": "Multicolour",
+      "brand": "Tinykarts",
+      "specialFeature": "Fade Resistant",
+      "style": "Indian",
+      "blanketForm": "Comforter",
+      "ageRange": "Adult",
+      "productDimensions": "2.28L x 1.52W Meters",
+      "theme": "Floral",
+      "pattern": "Floral"
+    },
+    {
+      "_id": 12,
+      "name": "Govindaraja 100% Cotton ",
+      "description": "High-quality wireless headphones with noise cancellation.",
+      "price": 79.99,
+      "image": "/images/gift2.png",
+      "images": [
+        "/images/Product _22.png",
+        "/images/Product _23.png",
+        "/images/Product _21.png",
+        "/images/Product2.png"
+      ],
+      "rating": 4.7,
+      "material": "Cotton",
+      "color": "Multicolour",
+      "brand": "Tinykarts",
+      "specialFeature": "Fade Resistant",
+      "style": "Indian",
+      "blanketForm": "Comforter",
+      "ageRange": "Adult",
+      "productDimensions": "2.28L x 1.52W Meters",
+      "theme": "Floral",
+      "pattern": "Floral"
+    },
 
-    ],
-    "rating": 5
-  },
-  {
-    "_id": 34,
-    "name": "Digital Camera",
-    "description": "Compact digital camera with 20MP resolution and HD video recording.",
-    "price": 149.99,
-    "image": "/images/craft4.png",
-    "images":[
-      "/images/product_42.png",
-      "/images/product_43.png",
-      "/images/product_41.png",
-      "/images/product4.png"
+    {
+        "_id": 13,
+        "name": "Govindaraja 100% Cotton ",
+        "description": "High-quality wireless headphones with noise cancellation.",
+        "price": 79.99,
+        "image": "/images/gift3.png",
+        "images": [
+          "/images/Product _32.png",
+          "/images/Product _33.png",
+          "/images/Product3.png",
+          "/images/Product _33.png"
+        ],
+        "rating": 4.7,
+        "material": "Cotton",
+        "color": "Multicolour",
+        "brand": "Tinykarts",
+        "specialFeature": "Fade Resistant",
+        "style": "Indian",
+        "blanketForm": "Comforter",
+        "ageRange": "Adult",
+        "productDimensions": "2.28L x 1.52W Meters",
+        "theme": "Floral",
+        "pattern": "Floral"
+      },
+      {
+        "_id": 14,
+        "name": "Govindaraja 100% Cotton ",
+        "description": "High-quality wireless headphones with noise cancellation.",
+        "price": 79.99,
+        "image": "/images/gift3.png",
+        "images": [
+          "/images/Product _42.png",
+          "/images/Product _43.png",
+          "/images/Product _41.png",
+          "/images/Product4.png"
+        ],
+        "rating": 4.7,
+        "material": "Cotton",
+        "color": "Multicolour",
+        "brand": "Tinykarts",
+        "specialFeature": "Fade Resistant",
+        "style": "Indian",
+        "blanketForm": "Comforter",
+        "ageRange": "Adult",
+        "productDimensions": "2.28L x 1.52W Meters",
+        "theme": "Floral",
+        "pattern": "Floral"
+      },
+      {
+        "_id": 15,
+        "name": "Govindaraja 100% Cotton ",
+        "description": "High-quality wireless headphones with noise cancellation.",
+        "price": 79.99,
+        "image": "/images/gift2.png",
+        "images": [
+          "/images/product_52.png",
+          "/images/product_53.png",
+          "/images/product_51.png",
+          "/images/product5.png"
+    
+        ],
+        "rating": 4.7,
+        "material": "Cotton",
+        "color": "Multicolour",
+        "brand": "Tinykarts",
+        "specialFeature": "Fade Resistant",
+        "style": "Indian",
+        "blanketForm": "Comforter",
+        "ageRange": "Adult",
+        "productDimensions": "2.28L x 1.52W Meters",
+        "theme": "Floral",
+        "pattern": "Floral"
+      },
+      {
+        "_id": 16,
+        "name": "Govindaraja 100% Cotton ",
+        "description": "High-quality wireless headphones with noise cancellation.",
+        "price": 79.99,
+        "image": "/images/gift3.png",
+        "images": [
+          "/images/product_22.png",
+          "/images/product_23.png",
+          "/images/product_21.png",
+          "/images/product2.png"
+    
+        ],
+        "rating": 4.7,
+        "material": "Cotton",
+        "color": "Multicolour",
+        "brand": "Tinykarts",
+        "specialFeature": "Fade Resistant",
+        "style": "Indian",
+        "blanketForm": "Comforter",
+        "ageRange": "Adult",
+        "productDimensions": "2.28L x 1.52W Meters",
+        "theme": "Floral",
+        "pattern": "Floral"
+      },
+      {
+        "_id": 21,
+        "name": "Govindaraja 100% Cotton ",
+        "description": "High-quality wireless headphones with noise cancellation.",
+        "price": 79.99,
+        "image": "/images/organic1.png",
+        "images": [
+          "/images/product_11.png",
+          "/images/product_12.png",
+          "/images/product1.png",
+          "/images/product_13.png"
+        ],
+        "rating": 4.7,
+        "material": "Cotton",
+        "color": "Multicolour",
+        "brand": "Tinykarts",
+        "specialFeature": "Fade Resistant",
+        "style": "Indian",
+        "blanketForm": "Comforter",
+        "ageRange": "Adult",
+        "productDimensions": "2.28L x 1.52W Meters",
+        "theme": "Floral",
+        "pattern": "Floral"
+      },
+      {
+        "_id": 22,
+        "name": "Govindaraja 100% Cotton ",
+        "description": "High-quality wireless headphones with noise cancellation.",
+        "price": 79.99,
+        "image": "/images/organic2.png",
+        "images": [
+          "/images/product_22.png",
+          "/images/product_23.png",
+          "/images/product_21.png",
+          "/images/product2.png"
+        ],
+        "rating": 4.7,
+        "material": "Cotton",
+        "color": "Multicolour",
+        "brand": "Tinykarts",
+        "specialFeature": "Fade Resistant",
+        "style": "Indian",
+        "blanketForm": "Comforter",
+        "ageRange": "Adult",
+        "productDimensions": "2.28L x 1.52W Meters",
+        "theme": "Floral",
+        "pattern": "Floral"
+      },
+      {
+          "_id": 23,
+          "name": "Govindaraja 100% Cotton ",
+          "description": "High-quality wireless headphones with noise cancellation.",
+          "price": 79.99,
+          "image": "/images/organic3.png",
+          "images": [
+              "/images/product_32.png",
+              "/images/product_33.png",
+              "/images/product3.png",
+              "/images/product_33.png"
+          ],
+          "rating": 4.7,
+          "material": "Cotton",
+          "color": "Multicolour",
+          "brand": "Tinykarts",
+          "specialFeature": "Fade Resistant",
+          "style": "Indian",
+          "blanketForm": "Comforter",
+          "ageRange": "Adult",
+          "productDimensions": "2.28L x 1.52W Meters",
+          "theme": "Floral",
+          "pattern": "Floral"
+        },
+    
+        {
+            "_id": 24,
+            "name": "Govindaraja 100% Cotton ",
+            "description": "High-quality wireless headphones with noise cancellation.",
+            "price": 79.99,
+            "image": "/images/organic4.png",
+            "images": [
+              "/images/product_42.png",
+    "/images/product_43.png",
+    "/images/product_41.png",
+    "/images/product4.png"
+            ],
+            "rating": 4.7,
+            "material": "Cotton",
+            "color": "Multicolour",
+            "brand": "Tinykarts",
+            "specialFeature": "Fade Resistant",
+            "style": "Indian",
+            "blanketForm": "Comforter",
+            "ageRange": "Adult",
+            "productDimensions": "2.28L x 1.52W Meters",
+            "theme": "Floral",
+            "pattern": "Floral"
+          },
+          {
+            "_id": 25,
+            "name": "Govindaraja 100% Cotton ",
+            "description": "High-quality wireless headphones with noise cancellation.",
+            "price": 79.99,
+            "image": "/images/organic5.png",
+            "images": [
+              "/images/product_52.png",
+    "/images/product_53.png",
+    "/images/product_51.png",
+    "/images/product5.png"
+            ],
+            "rating": 4.7,
+            "material": "Cotton",
+            "color": "Multicolour",
+            "brand": "Tinykarts",
+            "specialFeature": "Fade Resistant",
+            "style": "Indian",
+            "blanketForm": "Comforter",
+            "ageRange": "Adult",
+            "productDimensions": "2.28L x 1.52W Meters",
+            "theme": "Floral",
+            "pattern": "Floral"
+          },
+          {
+            "_id": 26,
+            "name": "Govindaraja 100% Cotton ",
+            "description": "High-quality wireless headphones with noise cancellation.",
+            "price": 79.99,
+            "image": "/images/organic6.png",
+            "images": [
+              "/images/product_22.png",
+              "/images/product_23.png",
+              "/images/product_21.png",
+              "/images/product2.png"
+            ],
+            "rating": 4.7,
+            "material": "Cotton",
+            "color": "Multicolour",
+            "brand": "Tinykarts",
+            "specialFeature": "Fade Resistant",
+            "style": "Indian",
+            "blanketForm": "Comforter",
+            "ageRange": "Adult",
+            "productDimensions": "2.28L x 1.52W Meters",
+            "theme": "Floral",
+            "pattern": "Floral"
+          },
+          {
+            "_id": 31,
+            "name": "Govindaraja 100% Cotton ",
+            "description": "High-quality wireless headphones with noise cancellation.",
+            "price": 79.99,
+            "image": "/images/Product _1Main.webp",
+            "images": [
+              "/images/Product _2.webp",
+              "/images/Product _3.webp",
+              "/images/Product _1Main.webp",
+              "/images/Product _4.webp"
+            ],
+            "rating": 4.7,
+            "material": "Cotton",
+            "color": "Multicolour",
+            "brand": "Tinykarts",
+            "specialFeature": "Fade Resistant",
+            "style": "Indian",
+            "blanketForm": "Comforter",
+            "ageRange": "Adult",
+            "productDimensions": "2.28L x 1.52W Meters",
+            "theme": "Floral",
+            "pattern": "Floral"
+          },
+          {
+            "_id":32,
+            "name": "Govindaraja 100% Cotton ",
+            "description": "High-quality wireless headphones with noise cancellation.",
+            "price": 79.99,
+            "image": "/images/craft2.png",
+            "images": [
+              "/images/product_22.png",
+              "/images/product_23.png",
+              "/images/product_21.png",
+              "/images/product2.png"
+            ],
+            "rating": 4.7,
+            "material": "Cotton",
+            "color": "Multicolour",
+            "brand": "Tinykarts",
+            "specialFeature": "Fade Resistant",
+            "style": "Indian",
+            "blanketForm": "Comforter",
+            "ageRange": "Adult",
+            "productDimensions": "2.28L x 1.52W Meters",
+            "theme": "Floral",
+            "pattern": "Floral"
+          },
+          {
+            "_id": 33,
+            "name": "Govindaraja 100% Cotton ",
+            "description": "High-quality wireless headphones with noise cancellation.",
+            "price": 79.99,
+            "image": "/images/craft3.png",
+            "images": [
+              "/images/product_32.png",
+              "/images/product_33.png",
+              "/images/product3.png",
+              "/images/product_33.png"
+            ],
+            "rating": 4.7,
+            "material": "Cotton",
+            "color": "Multicolour",
+            "brand": "Tinykarts",
+            "specialFeature": "Fade Resistant",
+            "style": "Indian",
+            "blanketForm": "Comforter",
+            "ageRange": "Adult",
+            "productDimensions": "2.28L x 1.52W Meters",
+            "theme": "Floral",
+            "pattern": "Floral"
+          },
+          {
+              "_id": 34,
+              "name": "Govindaraja 100% Cotton ",
+              "description": "High-quality wireless headphones with noise cancellation.",
+              "price": 79.99,
+              "image": "/images/craft4.png",
+              "images": [
+                  "/images/product_42.png",
+                  "/images/product_43.png",
+                  "/images/product_41.png",
+                  "/images/product4.png"
+              ],
+              "rating": 4.7,
+              "material": "Cotton",
+              "color": "Multicolour",
+              "brand": "Tinykarts",
+              "specialFeature": "Fade Resistant",
+              "style": "Indian",
+              "blanketForm": "Comforter",
+              "ageRange": "Adult",
+              "productDimensions": "2.28L x 1.52W Meters",
+              "theme": "Floral",
+              "pattern": "Floral"
+            },
+        
+            {
+                "_id": 35,
+                "name": "Govindaraja 100% Cotton ",
+                "description": "High-quality wireless headphones with noise cancellation.",
+                "price": 79.99,
+                "image": "/images/craft5.png",
+                "images": [
+                  "/images/product_52.png",
+    "/images/product_53.png",
+    "/images/product_51.png",
+    "/images/product5.png"
+                ],
+                "rating": 4.7,
+                "material": "Cotton",
+                "color": "Multicolour",
+                "brand": "Tinykarts",
+                "specialFeature": "Fade Resistant",
+                "style": "Indian",
+                "blanketForm": "Comforter",
+                "ageRange": "Adult",
+                "productDimensions": "2.28L x 1.52W Meters",
+                "theme": "Floral",
+                "pattern": "Floral"
+              },
+              {
+                "_id": 36,
+                "name": "Govindaraja 100% Cotton ",
+                "description": "High-quality wireless headphones with noise cancellation.",
+                "price": 79.99,
+                "image": "/images/craft6.png",
+                "images": [
+                  "/images/product_22.png",
+                  "/images/product_23.png",
+                  "/images/product_21.png",
+                  "/images/product2.png"
+                ],
+                "rating": 4.7,
+                "material": "Cotton",
+                "color": "Multicolour",
+                "brand": "Tinykarts",
+                "specialFeature": "Fade Resistant",
+                "style": "Indian",
+                "blanketForm": "Comforter",
+                "ageRange": "Adult",
+                "productDimensions": "2.28L x 1.52W Meters",
+                "theme": "Floral",
+                "pattern": "Floral"
+              }
+             
+                  
 
-    ],
-    "rating": 4.3
-  },
-  {
-    "_id": 35,
-    "name": "Wireless Charger",
-    "description": "Fast wireless charger compatible with all Qi-enabled devices.",
-    "price": 19.99,
-    "image": "/images/craft5.png",
-    "images":[
-      "/images/product_52.png",
-      "/images/product_53.png",
-      "/images/product_51.png",
-      "/images/product5.png"
-
-    ],
-    "rating": 4.7
-  },
-  {
-    "_id": 36,
-    "name": "Apple I Phone",
-    "description": "Fast wireless charger compatible with all Qi-enabled devices.",
-    "price": 1200.99,
-    "image": "/images/craft6.png",
-    "images":[
-      "/images/product_22.png",
-      "/images/product_23.png",
-      "/images/product_21.png",
-      "/images/product2.png"
-
-    ],
-    "rating": 4.7
-  }
-  
 ]

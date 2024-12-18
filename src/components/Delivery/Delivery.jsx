@@ -5,6 +5,8 @@ import { auth, db } from "../Firebase/Firebase";
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 import "./Delivery.css";
 import { FaPlus } from "react-icons/fa";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; 
 
 const Delivery = () => {
   const { cart, setCart } = useCart();
@@ -48,22 +50,24 @@ const Delivery = () => {
     }
   };
 
+
+
   const handleSaveAddress = async (newAddress) => {
     if (!user) return navigate("/login");
-
+  
     try {
       const userRef = doc(db, "users", user.uid);
       let updatedAddresses = [...savedAddresses];
-
+  
       if (formMode === "add") {
         // Adding a new address
         const isFirstAddress = savedAddresses.length === 0;
         newAddress = { ...formData, id: Date.now(), isDefault: isFirstAddress };
-
+  
         if (isFirstAddress) {
           updatedAddresses.forEach((address) => (address.isDefault = false));
         }
-
+  
         updatedAddresses.push(newAddress);
       } else if (formMode === "edit") {
         // Editing an existing address
@@ -73,10 +77,10 @@ const Delivery = () => {
             : address
         );
       }
-
+  
       await updateDoc(userRef, { addresses: updatedAddresses });
       setSavedAddresses(updatedAddresses);
-
+  
       // Update selected address if edited address is the default
       if (formMode === "edit" && currentEditAddress.isDefault) {
         setSelectedAddress(
@@ -85,29 +89,58 @@ const Delivery = () => {
           )
         );
       }
-
+  
       setIsPopupVisible(false);
       resetForm();
-
-      alert(
+  
+      // Show Toastify success message
+      toast.success(
         formMode === "add"
           ? "Address added successfully!"
-          : "Address updated successfully!"
+          : "Address updated successfully!",
+        {
+          position: "bottom-center",
+          autoClose: 3000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          theme: "colored",
+        }
       );
     } catch (error) {
       console.error("Error saving address:", error);
-      alert("Failed to save address. Please try again.");
+      
+      // Show Toastify error message
+      toast.error("Failed to save address. Please try again.", {
+        position: "bottom-center",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        theme: "colored",
+      });
     }
   };
+  
+
+
+
+
+
+
 
   const handleDeleteAddress = async (addressId) => {
+    console.log("Deleting address with ID:", addressId); // Debugging
+    
     if (!user) return navigate("/login");
-
+  
     try {
       const updatedAddresses = savedAddresses.filter(
         (address) => address.id !== addressId
       );
-
+  
       // If the deleted address was the default address, reset the default
       if (selectedAddress?.id === addressId) {
         const newDefault =
@@ -115,19 +148,39 @@ const Delivery = () => {
         if (newDefault) newDefault.isDefault = true;
         setSelectedAddress(newDefault);
       }
-
+  
       setSavedAddresses(updatedAddresses);
-
+  
       await updateDoc(doc(db, "users", user.uid), {
         addresses: updatedAddresses,
       });
-      alert("Address deleted successfully!");
+  
+      // Debugging: Check if this line is being reached
+      console.log("Address deleted, showing success toast");
+      toast.success("Address deleted successfully!", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        theme: "colored",
+      });
+  
     } catch (error) {
       console.error("Error deleting address:", error);
-      alert("Failed to delete address. Please try again.");
+      toast.error("Failed to delete address. Please try again.", {
+        position: "top-centerr",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        theme: "colored",
+      });
     }
   };
-
+  
 
   const handleMakeDefault = async (id) => {
     const updatedAddresses = savedAddresses.map((address) => ({

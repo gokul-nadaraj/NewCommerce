@@ -2,11 +2,31 @@ import { Link, useNavigate,} from "react-router-dom";
 import { useCart } from "../CartContext"; // Custom hook to manage cart state
 import "./Cart.css";
 import Pincode from "../Pincode/Pincode";
-const Cart = () => {
+import Empty from '/shopping.png';
+import { useEffect } from "react";
+import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const Cart = ()=>{
   const { cart, setCart } = useCart(); // Use cart and setCart from context
  
 const navigate=useNavigate()
   // Update item quantity in the cart
+  const [selectedCourier, setSelectedCourier] = useState(null);
+
+  const [selectedCourierCharges, setSelectedCourierCharges] = useState(0);
+
+  useEffect(() => {
+    if (selectedCourier) {
+      setSelectedCourierCharges(selectedCourier.cod_charges || 0); // Set COD charges from selected courier
+    }
+  }, [selectedCourier]); // Run effect when selectedCourier changes
+  const subtotal = parseFloat(
+    cart.items.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)
+  );
+
+
 
   const updateQuantity = (index, delta) => {
     if (!cart || !Array.isArray(cart.items)) {
@@ -60,8 +80,58 @@ const navigate=useNavigate()
       console.error("Product ID is undefined");
     }
   };
+
+
+  const handleCheckout = () => {
+    console.log("handleCheckout called!"); // Debugging log
+    console.log("Selected Courier:", selectedCourier); // Check courier state
+  
+    if (!selectedCourier) {
+      console.log("No courier selected! Showing toast."); // Debugging log
+      toast.error("Please select a courier address before proceeding to checkout!", {
+        position: "bottom-center",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        theme: "colored",
+      });
+      return; 
+    }
+  
+    
+    navigate("/checkout", {
+      state: { selectedCourier },
+    });
+  };
+  
+ 
+  <button
+    className="checkout-button"
+    onClick={handleCheckout}
+  >
+    Proceed to Checkout
+  </button>
   
   
+  
+
+
+
+
+
+
+
+
+
+
+
+
+useEffect(() => {
+  console.log("Selected Courier:", selectedCourier);
+}, [selectedCourier]);
+
 
   return (
    
@@ -100,40 +170,54 @@ const navigate=useNavigate()
               </div>
             </div>
           ))}
+             <div className="back-button-container">
+<Link to="/products">  <button className="Back-btn">Back</button></Link>
+</div>
         </>
       ) : (
-        <p className="empty-cart-message">Your cart is empty!</p>
+        <div className="empty-cart-message-container">
+        <p className="empty-cart-message">
+          <img src={Empty} alt="Empty cart" className="empty-cart-img" />
+          Your cart is empty!
+        </p>
+<Link to="/products"> <button className="continue-shopping-btn"><span>Continue Shopping</span></button> </Link>
+      </div>
       )}
     </div>
-  
+    
+
     {cart.items && cart.items.length > 0 && (
-      <div className="cart-summary-container">
-        <div className="cart-summary">
-          <div className="summary-row">
-            <span>Subtotal:</span>
-            <span>
-              ₹{parseFloat(cart.items.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2))}
-            </span>
-          </div>
-          <div className="additional">
-            <span>Additional Shipping Charges:</span>
-            <span>₹876</span>
-          </div>
-          <div className="summary-row total">
-            <span>Order Total:</span>
-            <span>
-              ₹{parseFloat(cart.items.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2))}
-            </span>
-          </div>
-          <Link to="/checkout" className="checkout-button">
-            PROCEED TO CHECKOUT
-          </Link>
+ <div className="cart-summary-container">
+ <div className="cart-summary">
+   <div className="summary-row">
+     <span>Subtotal:</span>
+     <span>₹{subtotal}</span>
+   </div>
+   <div className="additional">
+     <span>Additional Shipping Charges:</span>
+     <span>₹{selectedCourierCharges}</span> {/* Dynamically display shipping charges */}
+   </div>
+   <div className="summary-row total">
+     <span>Order Total:</span>
+     <span>₹{subtotal + selectedCourierCharges}</span> {/* Add COD charges to order total */}
+   </div>
+
+   
+          <button className="checkout-button"
+                onClick={handleCheckout} 
+              
+            >
+                Proceed to Checkout
+            </button>
+           
         </div>
        <div>
-        <Pincode/>
+        <Pincode selectedCourier={selectedCourier} 
+                setSelectedCourier={setSelectedCourier} />
        </div>
       </div>
     )}
+  {/* <ToastContainer /> */}
   </div>
   
 

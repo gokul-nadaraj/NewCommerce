@@ -12,7 +12,7 @@ import '../Vision/vision.css'
 
 const Vision = () => {
     
-  const settings = {
+  const settings ={
     dots: true,
     infinite: true,
     speed: 500,
@@ -26,7 +26,7 @@ const Vision = () => {
       <section>
         <div className='head1'>
             
-            <h1 className='Vision text-center'>Our Vision</h1>
+            <h2 className='Vision r text-4xl sm:text-4xlfont-bold text-indigo-700 animate-bounce transition duration-500 ease-in-out'>Our Vision</h2>
         </div>
 
         

@@ -1,16 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect} from "react";
+import { Navigate } from "react-router-dom";
+import { useState } from "react";
 import axios from "axios";
 import './pincode.css'
 
 
 
-const Pincode = () => {
+
+const Pincode = ({ selectedCourier, setSelectedCourier }) => {
     const [pincode, setPincode] = useState("");
     const [status, setStatus] = useState(null);
     const [courierDetails, setCourierDetails] = useState([]);
     const [loading, setLoading] = useState(false);
     const [apiToken, setApiToken] = useState(null);
-    const [selectedCourier, setSelectedCourier] = useState(null);
+   
+    const [selectedCourierCharges, setSelectedCourierCharges] = useState(0);
+
 
 
     const AUTH_API_URL = "https://apiv2.shiprocket.in/v1/external/auth/login";
@@ -26,7 +31,7 @@ const Pincode = () => {
             });
 
             const { token } = response.data;
-            console.log("Fetched API Token:", token); // Log the token for debugging
+          
             setApiToken(token);
         } catch (error) {
             console.error("Error fetching API token:", error.response?.data || error.message);
@@ -34,6 +39,12 @@ const Pincode = () => {
         }
     };
 
+    useEffect(() => {
+        if (courierDetails.length > 0) {
+          setSelectedCourierCharges(courierDetails[0].cod_charges || 0);
+        }
+      }, [courierDetails]);
+      
     // Fetch token on component mount
     useEffect(() => {
         fetchApiToken();
@@ -51,8 +62,8 @@ const Pincode = () => {
         setCourierDetails([]);
 
         try {
-            console.log("Using API Token:", apiToken); // Debug token
-            console.log("Requesting Pincode:", pincode); // Debug pincode
+          
+            
 
             const response = await axios.get(PINCODE_API_URL, {
                 params: {
@@ -90,11 +101,10 @@ const Pincode = () => {
     };
     const handleCourierSelect = (index) => {
         setSelectedCourier(courierDetails[index]);
+        setSelectedCourierCharges(selectedCourier.cod_charges || 0);
     };
 
-  
-
-
+ 
     return (
         <div className="pindoe-container">
             <h4>Check Pincode Serviceability</h4>
@@ -145,6 +155,25 @@ const Pincode = () => {
       {status && <p className="status">{status}</p>} 
       </div>  
   
+
+
+
+      {selectedCourier && (
+                <div className='seleteced-conatiner'>
+              
+                    <h2>Selected Courier Details</h2>
+                    <div className="courier-container" >
+    Your order will be delivered by <strong>{selectedCourier.courier_name}</strong>. 
+    The estimated delivery time is <strong>{selectedCourier.estimated_delivery_days || "N/A"} days</strong>, 
+    with an expected delivery date of <strong>{selectedCourier.etd || "N/A"}</strong>. 
+    Cash on Delivery charges for this order are <strong>₹{selectedCourier.cod_charges || "N/A"}</strong>. 
+    Thank you for shopping with us!
+</div>
+
+                    </div>
+            )}
+
+
      
             {courierDetails.length > 0 ? (
                 <form>
@@ -165,7 +194,7 @@ const Pincode = () => {
                          </div>
                             
                                   
-                         <div className="courier-container">
+                         <div className="courier-container" >
     We delivered your order via <strong>{courier.courier_name}</strong> in <strong>{courier.city || "N/A"}</strong>. 
     The estimated delivery date is <strong>{courier.etd || "N/A"}</strong>, and Cash on Delivery charges are 
     <strong> ₹{courier.cod_charges || "N/A"}</strong>. Thank you for choosing our service!
@@ -179,21 +208,11 @@ const Pincode = () => {
                 <p>No couriers available.</p>
             )}
 
-            {selectedCourier && (
-                <div className='seleteced-conatiner'>
-              
-                    <h2>Selected Courier Details</h2>
-                    <div className="courier-container">
-    Your order will be delivered by <strong>{selectedCourier.courier_name}</strong>. 
-    The estimated delivery time is <strong>{selectedCourier.estimated_delivery_days || "N/A"} days</strong>, 
-    with an expected delivery date of <strong>{selectedCourier.etd || "N/A"}</strong>. 
-    Cash on Delivery charges for this order are <strong>₹{selectedCourier.cod_charges || "N/A"}</strong>. 
-    Thank you for shopping with us!
-</div>
 
-                    </div>
-            )}
         </div>
+
+
+
     );
 };
 

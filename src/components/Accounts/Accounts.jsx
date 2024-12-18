@@ -30,11 +30,12 @@ const Accounts = () => {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
       if (user) {
+        setLoading(true);
         console.log("Current User:", user); // Logs auth user data
         try {
           const userRef = doc(db, "users", user.uid);
           const docSnap = await getDoc(userRef);
-  
+
           if (docSnap.exists()) {
             console.log("Fetched Firestore Data:", docSnap.data());
             const data = docSnap.data();
@@ -48,41 +49,55 @@ const Accounts = () => {
           }
         } catch (error) {
           console.error("Error fetching Firestore data:", error);
+        } finally {
+          setLoading(false);
         }
       } else {
         console.log("No user is signed in.");
+        setLoading(false);
       }
     });
-  
-    return () => unsubscribe();
-    
-  }, []);
-  
-  // console.log("Fetched Firestore Data:", docSnap.data());
 
- 
+    return () => unsubscribe();
+  }, []);
 
   return (
     <div className="main">
       {/* Contact Information Section */}
-      <div className="contact-info">
-        <p>Contact Information</p>
-        {userData ? (
-          <div className="info">
-            <p>
-              <span className="span-name">UserName:</span> {userData.username}
-            </p>
-            <p>
-              <span className="span-name">UserEmail:</span> {userData.email}
-            </p>
-            <p>
-              <span className="span-name">UserPhone:</span> {userData.phone}
-            </p>
+      {loading ? (
+        <p>Loading user data...</p>
+      ) : (
+        <>
+          <div className="contact-info">
+            <p>Contact Information</p>
+            {userData ? (
+              <div className="info">
+                <p>
+                  <span className="span-name">UserName:</span> {userData.username}
+                </p>
+                <p>
+                  <span className="span-name">UserEmail:</span> {userData.email}
+                </p>
+                <p>
+                  <span className="span-name">UserPhone:</span> {userData.phone}
+                </p>
+              </div>
+            ) : (
+              <p>No user data available.</p>
+            )}
+             <div className="Password-container">
+            <button onClick={() => setCurrentView("password")} className="password-co">
+              Change Password
+            </button>
+            <button onClick={() => setCurrentView("email")} className="password-co">
+              Change Email
+            </button>
           </div>
-        ) : (
-          <p>No user data available.</p>
-        )}
-      </div>
+          </div>
+
+         
+        </>
+      )}
 
       {/* Main Image or Forms */}
       <div className="main-img">

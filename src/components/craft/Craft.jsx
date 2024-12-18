@@ -1,7 +1,10 @@
 import React from "react";
-import products from "../JsonFile/products.json";
+import products from "../JsonFile/Craft.json";
 import { useCart } from "../CartContext";
 import { useNavigate } from "react-router-dom";
+
+// Import react-toastify components
+import { toast } from "react-toastify";
 
 const Craft = () => {
   const navigate = useNavigate();
@@ -33,7 +36,17 @@ const Craft = () => {
 
     const newTotal = updatedCart.reduce((sum, item) => sum + item.total, 0);
     setCart({ items: updatedCart, total: newTotal });
-    setCartIconQuantity(updatedCart.length); // Update the cart icon quantity
+    setCartIconQuantity(updatedCart.length);
+
+    toast.success(`${product.name} has been added to your cart!`, {
+      position: "bottom-center",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      theme: "colored",
+    });
   };
 
   const handleIncrement = (productId) => {
@@ -63,15 +76,15 @@ const Craft = () => {
               total: (item.quantity - 1) * item.price,
             };
           }
-          return null; 
+          return null;
         }
         return item;
       })
-      .filter((item) => item !== null); 
+      .filter((item) => item !== null);
 
     const newTotal = updatedCart.reduce((sum, item) => sum + item.total, 0);
     setCart({ items: updatedCart, total: newTotal });
-    setCartIconQuantity(updatedCart.length); 
+    setCartIconQuantity(updatedCart.length);
   };
 
   const handleViewProductDetails = (id) => {
@@ -85,7 +98,7 @@ const Craft = () => {
   return (
     <>
       <div className="product">
-        <h1 className="header-name">Craft Products</h1>
+        <h1 className="header-name">Gift Products</h1>
         <div className="product-list">
           {products.map((product) => {
             const cartItem = cart.items.find((item) => item._id === product._id);
@@ -100,35 +113,53 @@ const Craft = () => {
                 <p>{product.description}</p>
                 <p>{product.star}</p>
                 <p className="price">
-                Price:{" "}
-        {new Intl.NumberFormat("en-IN", {
-          style: "currency",
-          currency: "INR",
-        }).format(product.price)}
+                  Price:{" "}
+                  {new Intl.NumberFormat("en-IN", {
+                    style: "currency",
+                    currency: "INR",
+                  }).format(product.price)}
                 </p>
 
-                {/* Conditional rendering for Add/Quantity controls */}
                 {cartItem ? (
                   <div className="quantity-controls">
-                    <button onClick={() => handleDecrement(product._id)} className="quantity-ever">
+                    <button
+                      onClick={() => handleDecrement(product._id)}
+                      className="quantity-ever"
+                    >
                       -
                     </button>
                     <span>{cartItem.quantity}</span>
-                    <button onClick={() => handleIncrement(product._id)} className="quantity-ever">
+                    <button
+                      onClick={() => handleIncrement(product._id)}
+                      className="quantity-ever"
+                    >
                       +
                     </button>
                   </div>
                 ) : (
-                    <button
-                    className="cssbuttons-io"
-                    onClick={() => handleAddToCart(product)} >
-                    <span>
-                  
-                    
-                    Add To Cart
+                  <button
+                    type="button"
+                    className="button"
+                    onClick={() => handleAddToCart(product)}
+                  >
+                    <span className="button__text">Add Item</span>
+                    <span className="button__icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        viewBox="0 0 24 24"
+                        strokeWidth="2"
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                        stroke="currentColor"
+                        height="24"
+                        fill="none"
+                        className="svg"
+                      >
+                        <line y2="19" y1="5" x2="12" x1="12"></line>
+                        <line y2="12" y1="12" x2="19" x1="5"></line>
+                      </svg>
                     </span>
-             
-                  
                   </button>
                 )}
               </div>

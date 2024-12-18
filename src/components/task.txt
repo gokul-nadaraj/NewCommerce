@@ -20,12 +20,19 @@
 3.cm1 in cart page when i click image or produt name it navigate to details page of product  -manoj = completed
 4.add product price in while doing payment -Gokul =completed
 5.Replace all alert messsage respective with popup messsage -Manoj = completed
-6.13.Design Contact page -manoj
+6.13.Design Contact page -manoj   
 
  New task allocate on 13/12/2024
 
 1.add product specification in product details page -Gokul
 2.buy it again check -Gokul =complted
 3.Make a Para of Pincode checker address -Gokul = compled
-3. 3d effect and navbar alligns  in our Sellan Graphics website project -manoj
+4.3d effect and navbar alligns  in our Sellan Graphics website project -manoj
 
+Pending Tasks Of 13/12/2024
+4.3d effect and navbar alligns  in our Sellan Graphics website project -manoj
+
+
+New Task Allocated On 17/12/2024
+1.Write a code to read project files from one drive to sync up with project.json -manoj
+2.move project details to project.json and animation to describe -manoj

@@ -223,6 +223,24 @@ right: 40px;
   font-size: 14px;
   color: #555;
 }
+.Back-btn {
+  background-color: #2a9d8f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.Back-btn:hover {
+  background-color: #264653;
+}
+
+.back-button-container {
+  text-align: right;  /* Right-aligned, or change this to 'center' depending on where you want it */
+  margin: 20px 0;
+}
+
 
 /* Responsive design for smaller screens */
 
@@ -376,6 +394,90 @@ margin-left: 0px;
     font-size: 15px;
     position: relative;
     right: -80px;
-    top: -25px;
+    top: -5px;
   }
 }
+
+
+
+
+
+.empty-cart-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.empty-cart-message img {
+  width: 50%;
+  max-width: 300px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .empty-cart-message img {
+    width: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .empty-cart-message img {
+    width: 80%;
+  }
+}
+
+.empty-cart-message-container {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.empty-cart-message {
+  font-size: 20px;
+  color: #333;
+  margin-top: 20px;
+}
+
+.empty-cart-img {
+  max-width: 150px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .empty-cart-message {
+    font-size: 18px;
+  }
+
+  .empty-cart-img {
+    max-width: 120px;
+  }
+
+ 
+
+  .continue-shopping-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .empty-cart-message {
+    font-size: 16px;
+  }
+
+  .empty-cart-img {
+    max-width: 100px;
+  }
+
+  .continue-shopping-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+
+
+
+
