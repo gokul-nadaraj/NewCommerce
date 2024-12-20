@@ -1,21 +1,39 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
+import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../CartContext";
 import { auth, db } from "../Firebase/Firebase";
 import { doc, getDoc, setDoc, updateDoc, arrayUnion } from "firebase/firestore";
 import "./Checkout.css";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import Payment from "../Payment/Payment";
 import Order from "../Order/Order";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-import { Link } from "react-router-dom";
+
 
 const Checkout = () => {
   const { cart, setCart } = useCart();
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
 
+  const location = useLocation();
+    const { selectedCourier } = location.state || {}
+
+    const [selectedCourierCharges, setSelectedCourierCharges] = useState(0);
+    if (!selectedCourier) {
+      return <p>No courier selected. Please go back and select a courier.</p>;
+  }
+
+  useEffect(() => {
+    if (selectedCourier) {
+      setSelectedCourierCharges(selectedCourier.cod_charges || 0); // Set COD charges from selected courier
+    }
+  }, [selectedCourier]);
+
+  
+  
+  
   
   
   useEffect(() => {
@@ -46,6 +64,9 @@ const Checkout = () => {
   const [currentEditAddress, setCurrentEditAddress] = useState(null);
   const [savedAddresses, setSavedAddresses] = useState([]);
   const [selectedAddress, setSelectedAddress] = useState(null); // Track the selected address
+  const [editAddress, setEditAddress] = useState(null);
+
+
 
   // Fetch saved addresses for the logged-in user
   const fetchUserAddresses = async () => {
@@ -122,30 +143,32 @@ const Checkout = () => {
   };
 
 
-  const handleUseThisLocation = async () => {
-    if (!selectedAddress) return;
-
-    // Move the selected address to the first position in the list
-    const updatedAddresses = savedAddresses.filter(address => address.id !== selectedAddress.id);
-    const newAddresses = [selectedAddress, ...updatedAddresses];
-
-    // Set the selected address as the default
-    const finalAddresses = newAddresses.map((address, index) => ({
+  const reorderAddresses = (addresses, selected) => {
+    const updated = addresses.filter(address => address.id !== selected.id);
+    return [selected, ...updated].map((address, index) => ({
       ...address,
-      isDefault: index === 0, // Set the first address as default
+      isDefault: index === 0,
     }));
+  };
+  
 
+  const handleUseThisLocation = async () => {
+    if (!selectedAddress || savedAddresses[0]?.id === selectedAddress.id) return;
+  
+    const finalAddresses = reorderAddresses(savedAddresses, selectedAddress);
+  
     try {
       const userRef = doc(db, "users", user.uid);
       await updateDoc(userRef, { addresses: finalAddresses });
       setSavedAddresses(finalAddresses);
+      setShowAllAddresses(false); // Close the address list after selecting "Delivery Here"
+      toast.success("Address updated successfully!");
     } catch (error) {
       console.error("Error updating addresses:", error);
-      alert("Failed to update address.");
+      toast.error("Failed to update address.");
     }
   };
-
-
+  
 
 
 
@@ -174,37 +197,13 @@ const Checkout = () => {
   };
   
   // Handle edit button for an existing address
-  const handleEditButtonClick = (address) => {
+  const handleEditAddressClick = (address) => {
     setFormMode("edit");
-    setCurrentEditAddress(address);
-    setIsPopupVisible(true);          
-  };
-  
-  // Handle delete address
-  const handleDeleteAddress = async (addressId) => {
-    const user = auth.currentUser;
-  
-    if (!user) {
-      alert("Please log in to delete your address.");
-      navigate("/login");
-      return;
-    }
-  
-    try {
-      const updatedAddresses = savedAddresses.filter((address) => address.id !== addressId);
-  
-      const userRef = doc(db, "users", user.uid);
-      await updateDoc(userRef, { addresses: updatedAddresses });
-  
-      setSavedAddresses(updatedAddresses);
-  
-      alert("Address deleted successfully!");
-    } catch (error) {
-      console.error("Error deleting address: ", error);
-      alert("Failed to delete the address.");
-    }
+    setCurrentEditAddress(address); // Set the address to be edited
+    setIsPopupVisible(true); // Show the form popup
   };
 
+ 
   const handleSelectAddress = async (address) => {
     const updatedAddresses = savedAddresses.map((addr) =>
       addr.id === address.id
@@ -222,71 +221,128 @@ const Checkout = () => {
       alert("Failed to update the default address.");
     }
   };
-  
   const handleChangeAddressClick = () => {
-    setShowAllAddresses(!showAllAddresses); // Toggle visibility of all addresses
+    if (showAllAddresses) {
+      // If already showing all addresses, toggle to "edit" mode for the first address
+      handleEditAddressClick(savedAddresses[0]);
+    } else {
+      // Otherwise, toggle visibility of all addresses
+      setShowAllAddresses(true);
+    }
   };
-   // Render the addresses
-  return (
-    <div className="container">
-    <h1>Delivery Address</h1>
+  
 
-    {/* Show the first address (default) */}
-    {savedAddresses.length > 0 && (
-      <div className="address-card">
+  const handleUpdateAddress = async (updatedAddress) => {
+    try {
+      const updatedAddresses = savedAddresses.map((address) =>
+        address.id === updatedAddress.id ? updatedAddress : address
+      );
+  
+      const userRef = doc(db, "users", user.uid);
+      await updateDoc(userRef, { addresses: updatedAddresses });
+  
+      setSavedAddresses(updatedAddresses);
+      toast.success("Address updated successfully!");
+      setIsPopupVisible(false); // Close the form
+    } catch (error) {
+      console.error("Error updating address:", error);
+      toast.error("Failed to update address.");
+    }
+  };
+
+
+
+  return (
+ 
+<div className="container">
+
+<div className="checkout-container">
+  <h1>Delivery Address</h1>
+
+  {/* Show the first address (default) */}
+  {savedAddresses.length > 0 && !editAddress && (
+    <div className="address-card">
+      <div className="address-header">
         <input
           type="radio"
           name="selectedAddress"
+          className="radio-input"
           checked={selectedAddress?.id === savedAddresses[0].id} // Compare with selectedAddress
           onChange={() => handleSelectAddress(savedAddresses[0])}
         />
-        <p>{savedAddresses[0].firstName} {savedAddresses[0].lastName}</p>
-        <p>{savedAddresses[0].mobileNo}</p>
-        <p>{savedAddresses[0].addressLine1}, {savedAddresses[0].addressLine2}, {savedAddresses[0].state}, {savedAddresses[0].country}, {savedAddresses[0].pincode}</p>
-        <button onClick={handleChangeAddressClick} className="change-button">
-          Change Address
-        </button>
-      </div>
-    )}
+        <p className="address-name1">
+          {savedAddresses[0].firstName} {savedAddresses[0].lastName}
+          {savedAddresses[0].mobileNo}
+        </p>
 
-    {/* Show all other addresses if "Change Address" is clicked */}
-    {showAllAddresses && savedAddresses.length > 1 && (
-      <div className="address-list">
-        {savedAddresses.slice(1).map((address) => (
-          <div key={address.id} className="address-card">
+        <p className="address-details1">
+          {savedAddresses[0].addressLine1}, {savedAddresses[0].addressLine2}, {savedAddresses[0].state},
+          {savedAddresses[0].country}, {savedAddresses[0].pincode}
+        </p>
+
+        <button
+          onClick={handleChangeAddressClick}
+          className="toggle"
+        >
+          {showAllAddresses ? "Edit" : "Change Address"}
+        </button>
+
+        {selectedAddress?.id === savedAddresses[0].id && ( // Conditionally render "Delivery Here" for selected default address
+          <button onClick={handleUseThisLocation} className="use-location-button">
+            Delivery Here
+          </button>
+        )}
+      </div>
+    </div>
+  )}
+
+  {/* Show all other addresses if "Change Address" is clicked */}
+  {showAllAddresses && savedAddresses.length > 1 && !editAddress && (
+    <div className="address-list">
+      {savedAddresses.slice(1).map((address) => (
+        <div key={address.id} className="address-card-horizontal">
+          <div className="address-header">
             <input
               type="radio"
               name="selectedAddress"
+              className="radio-input1"
               checked={selectedAddress?.id === address.id} // Use selectedAddress to check
               onChange={() => handleSelectAddress(address)} // Handle radio button click
             />
-            <p>{address.firstName} {address.lastName}</p>
-            <p>{address.mobileNo}</p>
-            <p>{address.addressLine1}, {address.addressLine2}, {address.state}, {address.country}, {address.pincode}</p>
+
+            <div className="address-content">
+              <span className="address-title">
+                {address.firstName} | {address.lastName} | {address.mobileNo}
+              </span>
+              <span className="address-details">
+                {address.addressLine1}, {address.addressLine2}, {address.state},{" "}
+                {address.country}, {address.pincode}
+              </span>
+            </div>
+
+            <button
+              onClick={() => handleEditAddressClick(address)}
+              className="edit-button"
+            >
+              Edit
+            </button>
+
+            {selectedAddress?.id === address.id && ( // Conditionally render button for selected address
+              <button onClick={handleUseThisLocation} className="use-location-button">
+                Delivery Here
+              </button>
+            )}
           </div>
-        ))}
-        <button onClick={handleUseThisLocation} className="use-location-button">
-          Use this location
-        </button>
-      </div>
-    )}
-
-      <button onClick={handleAddNewAddressClick} className="add-button">Add a new address</button>
-    
-
-
-
-  
-     
+        </div>
+      ))}
+    </div>
+  )}
 
 
 
 
-  
-
-
-    {/* Popup form for adding new address */}
-    {isPopupVisible && (
+ <button onClick={handleAddNewAddressClick} className="add-button">Add a new address</button>
+ {isPopupVisible && (
   <div className="popup-container">
     <div className="form-container">
       <div className="form-header">
@@ -301,18 +357,16 @@ const Checkout = () => {
     const address = Object.fromEntries(formData);
 
     if (formMode === "edit") {
-
-      address.id = currentEditAddress?.id;
-      handleUpdateSelectedAddress(address); 
+      address.id = currentEditAddress?.id; // Ensure the ID remains the same
+      handleUpdateAddress(address); // Update the existing address
     } else if (formMode === "add") {
       const newAddress = { ...address, id: Date.now() };
-      handleSubmitAddress(newAddress); // Add the new address
+      handleSubmitAddress(newAddress); // Add a new address
     }
 
-    resetForm(); 
+    resetForm(); // Reset form fields
   }}
 >
-
 
   
     {/* Form Fields */}
@@ -391,22 +445,23 @@ const Checkout = () => {
     </div>
   </div>
 )}
- 
-
-    <div>  
 
 
-
-
+{/* 
 <Order/>  
 
 
-<Payment/>
+<Payment/> */}
+
+</div>
 
 
 
-  </div>
-  <div className="price-details-container">
+
+
+
+<div className="combine conatiner">
+<div className="price-details-container">
           <h2>Price Details</h2>
 
           <div className="total-details">
@@ -417,13 +472,42 @@ const Checkout = () => {
 
           <div className="total-details">
           <p>Additional Shipping Charges:</p>
-          <span>₹900</span>
+          <span>₹{selectedCourierCharges}</span>
           </div>
 <div className="total-details1">
 <p className="amount">Total Amount:</p>
-<span>₹{parseFloat(cart.items.reduce((total, item) => total + item.total, 0)).toFixed(2)}</span>
+<span>
+    ₹{(
+      parseFloat(cart.items.reduce((total, item) => total + item.total, 0).toFixed(2)) +
+      selectedCourierCharges
+    ).toFixed(2)} 
+  </span>
 </div>
+  </div>
+
+
+<div className="checkout-select-container">
+
+    {selectedCourier ? (
+        <div>
+            <h3>Your selected Courier Address:</h3>
+            <p>
+                Your order will be delivered via <strong>{selectedCourier.courier_name}</strong> 
+                in <strong>{selectedCourier.city || "N/A"}</strong>. The delivery is expected 
+                within <strong>{selectedCourier.estimated_delivery_days || "N/A"} days</strong>, 
+                and the estimated delivery date is <strong>{selectedCourier.etd || "N/A"}</strong>. 
+                If applicable, the Cash on Delivery (COD) charges are <strong>₹{selectedCourier.cod_charges || "N/A"}</strong>.
+                Thank you for choosing our service!
+            </p>
+        </div>
+    ) : (
+        <p>No courier selected. Please go back and select a courier.</p>
+    )}
 </div>
+        </div>
+
+
+
 
   </div>
   

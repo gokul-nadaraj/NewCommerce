@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { auth, db } from "../Firebase/Firebase";
 import { doc, setDoc } from "firebase/firestore";
-import { FaEnvelope, FaPhone, FaLock, FaUser } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaLock, FaUser,FaEye,FaEyeSlash } from 'react-icons/fa';
 import { createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
 import { useCart } from "../CartContext";
 import './Login.css';
@@ -23,7 +23,9 @@ const Auth = () => {
   const [isResettingPassword, setIsResettingPassword] = useState(false);
   const { cart } = useCart();
   const [phone, setPhone] = useState("");
-
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  
   // Handle Signup
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -213,35 +215,49 @@ const Auth = () => {
             </>
           )}
 
-          {!isResettingPassword && (
-            <div>
-              <label>Password:</label>
-              <div className="input-wrapper">
-                <FaLock className="input-icon" />
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
-              </div>
-            </div>
-          )}
+{!isResettingPassword && (
+  <div>
+    <label>Password:</label>
+    <div className="input-wrapper">
+      <FaLock className="input-icon" />
+      <input
+        type={showPassword ? "text" : "password"}
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        required
+      />
+      <span
+        className="toggle-visibility"
+        onClick={() => setShowPassword(!showPassword)}
+      >
+        {showPassword ? <FaEyeSlash /> : <FaEye />}
+      </span>
+    </div>
+  </div>
+)}
 
-          {isSignup && (
-            <div>
-              <label>Confirm Password:</label>
-              <div className="input-wrapper">
-                <FaLock className="input-icon" />
-                <input
-                  type="password"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  required
-                />
-              </div>
-            </div>
-          )}
+{isSignup && (
+  <div>
+    <label>Confirm Password:</label>
+    <div className="input-wrapper">
+      <FaLock className="input-icon" />
+      <input
+        type={showConfirmPassword ? "text" : "password"}
+        value={confirmPassword}
+        onChange={(e) => setConfirmPassword(e.target.value)}
+        required
+      />
+      <span
+        className="toggle-visibility"
+        onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+      >
+        {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
+      </span>
+    </div>
+  </div>
+)}
+
+          
 
           {error && <p style={{ color: "red" }}>{error}</p>}
 
