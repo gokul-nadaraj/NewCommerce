@@ -3,75 +3,75 @@
 
     {
       "_id": 1,
-      "name": "Wireless Headphones",
-      "description": "High-quality wireless headphones with noise cancellation.",
-      "price": 79.99,
-      "image": "/images/Product _1Main.webp",
+      "name": "Bedsheets ",
+      "description": "Transform your bedroom into a haven of relaxation with our premium cotton bedsheets. ",
+      "price": 499,
+      "image": "/images/bheem.png",
       "images":[
-        "/images/Product _2.webp",
-        "/images/Product _3.webp",
-        "/images/Product _1Main.webp",
-        "/images/Product _4.webp"
+        "/images/bheem.png",
+        "/images/bheem.png",
+        "/images/bheem.png",
+        "/images/bheem.png"
   
       ],
       "rating": 4.7
     },
     {
       "_id": 2,
-      "name": "Smartwatch",
-      "description": "High-quality wireless headphones with noise cancellation.",
-      "price": 99.99,
-      "image": "/images/bed2.png",
+      "name": "Cotton Checkered",
+      "description": "Premium Handwoven Cotton Checkered Bedsheets. ",
+      "price": 299  ,
+      "image": "/images/loom.png",
       "images":[
-        "/images/product_22.png",
-        "/images/product_23.png",
-        "/images/product_21.png",
-        "/images/product2.png"
+        "/images/loom.png",
+        "/images/loom.png",
+        "/images/loom.png",
+        "/images/loom.png"
   
       ],
       "rating": 4.2
     },
     {
       "_id": 3,
-      "name": "Bluetooth Speaker",
-      "description": "Portable Bluetooth speaker with high-quality sound.",
-      "price": 49.99,
-      "image": "/images/bed3.png",
+      "name": "Elegant Multicolor ",
+      "description": "Elegant Multicolor Striped Cotton Bedsheet ",
+      "price": 299,
+      "image": "/images/Stripe.png",
       "images":[
-        "/images/product_32.png",
-        "/images/product_33.png",
-        "/images/product3.png",
-        "/images/product_33.png"
+        "/images/Stripe.png",
+        "/images/Stripe.png",
+        "/images/Stripe.png",
+        "/images/Stripe.png"
   
       ],
       "rating": 5
     },
     {
       "_id": 4,
-      "name": "Digital Camera",
-      "description": "Compact digital camera with 20MP resolution and HD video recording.",
-      "price": 149.99,
-      "image": "/images/bed4.png",
+      "name": "VIKING Bedsheet ",
+      "description": "red and orange hues. Crafted from 100% pure cotton",
+      "price": 419,
+      "image": "/images/Viking.png",
       "images":[
-        "/images/product_42.png",
-        "/images/product_43.png",
-        "/images/product_41.png",
-        "/images/product4.png"
+        "/images/Viking.png",
+        "/images/Viking.png",
+        "/images/Viking.png",
+        "/images/Viking.png"
   
       ],
       "rating": 4.3
     },
     {
       "_id": 5,
-      "name": "Wireless Charger",
-      "description": "Fast wireless charger compatible with all Qi-enabled devices.",
-      "price": 19.99,
-      "image": "/images/bed5.png",
+      "name": "Checkered Bedsheet ",
+      "description": "Cotton Checkered  red and orange hues",
+      "price": 199,
+      "image": "/images/Checked.png",
       "images":[
-        "/images/product_52.png",
-        "/images/product_53.png",
-        "/images/product_51.png",
-        "/images/product5.png"
+        "/images/Checked.png",
+        "/images/Checked.png",
+        "/images/Checked.png",
+        "/images/Checked.png"
   
       ],
       "rating": 4.7

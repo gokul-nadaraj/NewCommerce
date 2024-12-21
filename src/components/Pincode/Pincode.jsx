@@ -31,7 +31,7 @@ const Pincode = ({ selectedCourier, setSelectedCourier }) => {
             });
 
             const { token } = response.data;
-          
+            console.log("Fetched API Token:", token); // Log the token for debugging
             setApiToken(token);
         } catch (error) {
             console.error("Error fetching API token:", error.response?.data || error.message);
@@ -62,8 +62,8 @@ const Pincode = ({ selectedCourier, setSelectedCourier }) => {
         setCourierDetails([]);
 
         try {
-          
-            
+            console.log("Using API Token:", apiToken); // Debug token
+            console.log("Requesting Pincode:", pincode); // Debug pincode
 
             const response = await axios.get(PINCODE_API_URL, {
                 params: {

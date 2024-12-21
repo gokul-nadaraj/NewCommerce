@@ -5,7 +5,7 @@ import { auth, db } from "../Firebase/Firebase";
 import { doc, getDoc, setDoc, updateDoc, arrayUnion } from "firebase/firestore";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import {  toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import './Payment.css';
 
@@ -203,7 +203,7 @@ console.log(totalAmount)
           </div>
         </div>
       )}
-      <ToastContainer />
+   
     </>
   );
 };

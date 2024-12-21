@@ -5,6 +5,7 @@ footer{
     font-family: "Yuji Mai", serif;
     font-weight: 700;
     background-color:#16a085;
+    background-color:  #16a085 !important;
     color: black;
 }
 .h-10 {

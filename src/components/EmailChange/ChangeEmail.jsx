@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { auth } from "../Firebase/Firebase"; // Ensure this points to your Firebase setup
-import { signInWithPhoneNumber } from "firebase/auth";
-import './ChangeEmail.css';
+import { getAuth, signInWithPhoneNumber } from "firebase/auth";
+import "./ChangeEmail.css";
 
-const ChangeEmail = () => {
+const ChangePhoneNumber = () => {
   const [username, setUsername] = useState("");
   const [newMobile, setNewMobile] = useState("");
   const [otp, setOtp] = useState("");
@@ -12,61 +11,61 @@ const ChangeEmail = () => {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
 
+  const auth = getAuth();
+
+  // Send OTP
   const sendOtp = async () => {
     setError(null);
     setSuccess(null);
 
-    // Check for a valid 10-digit phone number
     if (!/^\d{10}$/.test(newMobile)) {
       setError("Please enter a valid 10-digit mobile number.");
       return;
     }
 
-    try {
-      const phoneNumber = `+91${newMobile}`; // Ensure correct formatting
+    const phoneNumber = `+91${newMobile}`;
 
-      // Send OTP to the provided phone number
+    try {
+      // Disable app verification for testing
+      auth.settings.appVerificationDisabledForTesting = true;
+
+      // Call signInWithPhoneNumber without appVerifier in testing mode
       const confirmationResult = await signInWithPhoneNumber(auth, phoneNumber);
       setVerificationId(confirmationResult.verificationId);
       setOtpSent(true);
-      setSuccess(`OTP sent to ${newMobile}.`);
+      setSuccess("OTP sent successfully.");
     } catch (error) {
       console.error("Error sending OTP:", error);
       setError("Failed to send OTP. Please try again.");
     }
   };
 
+  // Verify OTP and Update Phone Number
   const verifyOtpAndUpdate = async (e) => {
     e.preventDefault();
     setError(null);
     setSuccess(null);
 
+    if (!verificationId) {
+      setError("Verification ID not found. Please resend OTP.");
+      return;
+    }
+
     try {
-      if (!otpSent) {
-        setError("Please send OTP first.");
-        return;
-      }
+      const credential = auth.PhoneAuthProvider.credential(verificationId, otp);
+      const userCredential = await auth.signInWithCredential(credential);
 
-      if (!verificationId) {
-        setError("Verification ID not found. Please resend OTP.");
-        return;
-      }
-
-      const credential = await auth.PhoneAuthProvider.credential(verificationId, otp);
-      await auth.signInWithCredential(credential);
-
-      // Update user details
-      const user = auth.currentUser;
+      const user = userCredential.user;
       if (!user) {
-        setError("User is not authenticated.");
+        setError("User authentication failed.");
         return;
       }
 
+      // Update the username if provided
       if (username) {
         await user.updateProfile({ displayName: username });
       }
 
-      // Mobile number can be stored in Firestore or your database
       setSuccess("Details updated successfully!");
     } catch (error) {
       console.error("Error verifying OTP:", error);
@@ -125,4 +124,4 @@ const ChangeEmail = () => {
   );
 };
 
-export default ChangeEmail;
+export default ChangePhoneNumber;

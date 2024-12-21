@@ -22,6 +22,7 @@ import Footer from "./components/Footer/Footer.jsx";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AnimatePresence } from "framer-motion";
+import ContactPage from "./components/Contact/Contact.jsx";
 
 function App() {
     return (
@@ -55,7 +56,11 @@ function Main() {
         // toast.info(`Navigated to ${location.pathname}`);
     }, [location]);
 
-    return (
+  return (
+    
+
+          
+    
         <AnimatePresence mode="wait">
             <Routes>
                 <Route path="/" element={<FrontPage />} />
@@ -63,10 +68,11 @@ function Main() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/craft" element={<Craft />} />
                 <Route path="/Gift-products" element={<Gift />} />
+                <Route path="/Contact" element={<ContactPage/>} />
                 <Route path="/Organic-products" element={<Organic />} />
                 <Route path="/Bedsheet-products" element={<Bedproduct />} />
                 <Route path="/cart" element={<Cart />} />
-                <Route path="/checkout" element={<Checkout />} />
+ `               <Route path="/checkout" element={<Checkout />} />
                 <Route path="/success" element={<Success />} />
                 <Route path="/order-history" element={<OrderHistory />} />
                 <Route path="/product/:id" element={<ProductDetails />} />
@@ -75,6 +81,7 @@ function Main() {
                 <Route path="/change-password" element={<Password />} />
                 <Route path="/change-email" element={<ChangeEmail />} />
             </Routes>
+           
         </AnimatePresence>
     );
 }

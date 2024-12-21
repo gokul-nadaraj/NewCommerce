@@ -32,7 +32,7 @@ const Footer = () => {
 
     {/* Developer Credit */}
     <div className="text-center text-sm sm:text-base md:text-lg font-light">
-      <p>
+      <p style={{fontSize:"20px"}}>
         Website developed by{" "}
         <a
           href="https://www.seelangraphics.com/"
@@ -42,7 +42,7 @@ const Footer = () => {
           Seelan graphic compass pvt ltd
         </a>
       </p>
-      <p>Copyrights © 2024 TinyKarts. All Rights Reserved.</p>
+      <p style={{fontSize:"20px"}}>Copyrights © 2024 TinyKarts. All Rights Reserved.</p>
     </div>
   </div>
 </footer>

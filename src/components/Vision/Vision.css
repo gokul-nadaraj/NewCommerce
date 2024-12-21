@@ -234,3 +234,9 @@ border-radius: 10%;
         margin-top: 10px;
       }
     }
+
+    .text-center {
+       font-size: 60px !important;
+        font-weight: 600;
+        color: #005200;
+    }

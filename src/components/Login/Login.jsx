@@ -216,46 +216,48 @@ const Auth = () => {
           )}
 
 {!isResettingPassword && (
-  <div>
-    <label>Password:</label>
-    <div className="input-wrapper">
-      <FaLock className="input-icon" />
-      <input
-        type={showPassword ? "text" : "password"}
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        required
-      />
-      <span
-        className="toggle-visibility"
-        onClick={() => setShowPassword(!showPassword)}
-      >
-        {showPassword ? <FaEyeSlash /> : <FaEye />}
-      </span>
-    </div>
-  </div>
-)}
+        <div>
+          <label>Password:</label>
+          <div className="input-wrapper">
+            <FaLock className="input-icon" />
+            <input
+              type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <span
+              className="toggle-visibility"
+              onClick={() => setShowPassword(!showPassword)}
+              aria-label="Toggle password visibility"
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </span>
+          </div>
+        </div>
+      )}
 
-{isSignup && (
-  <div>
-    <label>Confirm Password:</label>
-    <div className="input-wrapper">
-      <FaLock className="input-icon" />
-      <input
-        type={showConfirmPassword ? "text" : "password"}
-        value={confirmPassword}
-        onChange={(e) => setConfirmPassword(e.target.value)}
-        required
-      />
-      <span
-        className="toggle-visibility"
-        onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-      >
-        {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
-      </span>
-    </div>
-  </div>
-)}
+      {isSignup && (
+        <div>
+          <label>Confirm Password:</label>
+          <div className="input-wrapper">
+            <FaLock className="input-icon" />
+            <input
+              type={showConfirmPassword ? "text" : "password"}
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+            <span
+              className="toggle-visibility"
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+              aria-label="Toggle confirm password visibility"
+            >
+              {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
+            </span>
+          </div>
+        </div>
+      )}
 
           
 

@@ -1,15 +1,216 @@
 [
   {
     "_id": 1,
-    "name": "Govindaraja 100% Cotton ",
+    "name": "Premium Cotton Bedsheets (Govindraja) – Ultimate Comfort & Elegance",
+    "price": "499",
+    "image": "/images/bheem.png",
+    "images": [
+      "/images/bheem.png",
+      "/images/bheem.png",
+      "/images/bheem.png",
+      "/images/bheem.png"
+    ],
+    "rating": 4.7,
+    "material": "Cotton",
+    "color": "10 colours available",
+    "brand": "Tinykarts",
+    "specialFeature": "Fade Resistant",
+    "style": "Indian",
+    "blanketForm": "Comforter",
+    "ageRange": "Adult",
+    "productDimensions": "2.28L x 1.52W Meters",
+    "theme": "Floral",
+    "pattern": "Floral",
+    "productDescription": "Transform your bedroom into a haven of relaxation with our premium cotton bedsheets. Crafted to perfection, these bedsheets combine luxurious softness, vibrant designs, and long-lasting durability to meet your comfort needs.",
+    "keyFeatures": [
+      "100% Pure Cotton: Breathable fabric for a cool and comfortable sleep.",
+      "Thread Count: Available in 200, 300, and 400 thread counts for a silky-smooth texture.",
+      "Vibrant Prints & Solid Colors: Choose from a wide range of designs to complement your home decor.",
+      "Size Options: Suitable for Single, Queen, and King beds.",
+      "Fade-Resistant & Durable: Made with high-quality dyes to ensure long-lasting colors."
+    ],
+    "Specifications": [
+      "Machine washable in cold water.",
+      "Tumble dry on low heat.",
+      "Do not bleach to maintain fabric integrity."
+    ]
+  },
+  {
+    "_id": 2,
+    "name": "Premium Power loom Cotton Checkered (SITHI) Bedsheets  ",
+    "description": "High-quality wireless headphones with noise cancellation.",
+    "price": 299,
+    "image": "/images/loom.png",
+    "images": [
+      "/images/loom.png",
+      "/images/loom.png",
+      "/images/loom.png",
+      "/images/loom.png"
+    ],
+    "rating": 4.2,
+    "material": "Cotton",
+    "color": "Multicolour",
+    "brand": "Tinykarts",
+    "specialFeature": "Fade Resistant",
+    "style": "Indian",
+    "blanketForm": "Comforter",
+    "ageRange": "Adult",
+    "productDimensions": "2.28L x 1.52W Meters",
+    "theme": "Floral",
+    "pattern": "Floral",
+    "productDescription": "Add a splash of vibrant charm and traditional elegance to your bedroom with our Premium Handwoven Cotton Checkered Bedsheets. Made from high-quality cotton, these bedsheets feature eye-catching checkered patterns in multiple bold color combinations, perfect for brightening up any living space.",
+    "keyFeatures": [
+        "Premium Cotton Material - Soft, breathable, and skin-friendly for a comfortable night's sleep",
+      	"Handwoven Craftsmanship - Expertly crafted for durability and timeless appeal.",
+      	"Vibrant Colors - Multi-hued checkered designs for a lively and stylish look.",
+      	"Perfect Fit - Available in various sizes to suit single, double, and king-size beds.",
+      	"Easy Maintenance - Machine washable and fade-resistant fabric for long-lasting quality."
+      
+    ],
+    "Specifications": [
+	"Material: 100% Pure Cotton",
+	"Design: Multicolor Checkered Pattern",
+	"Care Instructions: Machine wash in cold water, tumble dry on low heat",
+	"Package Includes: 1 Bedsheet"
+
+    ]
+  },
+  {
+    "_id": 3,
+    "name": "Elegant Multicolor Striped Cotton Bedsheet ",
+    "description": "Made from premium-quality cotton, it ensures a soft, breathable, and luxurious sleeping experience.",
+    "price": 299,
+    "image": "/images/Stripe.png",
+    "images": [
+      "/images/Stripe.png",
+      "/images/Stripe.png",
+      "/images/Stripe.png",
+      "/images/Stripe.png"
+    ],
+    "rating": 5,
+    "material": "Cotton",
+    "color": "Multicolour",
+    "brand": "Tinykarts",
+    "specialFeature": "Fade Resistant",
+    "style": "Indian",
+    "blanketForm": "Comforter",
+    "ageRange": "Adult",
+    "productDimensions": "2.28L x 1.52W Meters",
+    "theme": "Floral",
+    "pattern": "Floral",
+    "productDescription": "Refresh your bedroom with the Elegant Multicolor Striped Cotton Bedsheet. Featuring a timeless stripe pattern in a blend of vibrant and earthy tones, this bedsheet combines comfort and style effortlessly. Made from premium-quality cotton, it ensures a soft, breathable, and luxurious sleeping experience.",
+"keyFeatures": [
+  "High-Quality Cotton - Soft, durable, and gentle on the skin.",
+  "Modern Striped Design - A mix of bold and neutral stripes adds a contemporary touch to your space.",
+  "Colorful Aesthetic - Multicolor stripes to complement any room decor.",
+  "Perfect Fit - Available in multiple sizes for single, double, and king beds.",
+  "Easy to Maintain - Fade-resistant fabric, machine washable for hassle-free care.",
+  "Why Choose This Bedsheet?",
+  "Designed to elevate your bedroom decor, this bedsheet offers a stylish yet functional solution for your everyday needs. Perfect for homes, guest rooms, or gifting."
+
+],                                                                                                                        
+
+    "Specifications": [
+  "Material: 100% Pure Cotton",
+	"Design: Multicolor Striped Pattern",
+"Dimensions: Available in Single, Double, or King Sizes",
+"Care Instructions: Machine wash cold, tumble dry low",
+"Package Includes: 1 Bedsheet"
+    ]         
+  },          
+  {         
+    "_id": 4,       
+    "name": "Premium Cotton VIKING Bedsheet ",          
+    "description":"red and orange hues.Crafted from 100% pure cotton                                                                                                    ation.",
+    "price": 419,
+    "image": "/images/Viking.png",
+    "images": [
+      "/images/Viking.png",
+      "/images/Viking.png",
+      "/images/Viking.png",
+      "/images/Viking.png"
+    ],
+    "rating": 4.2,
+    "material": "Cotton",
+    "color": "Multicolour",
+    "brand": "Tinykarts",
+    "specialFeature": "Fade Resistant",
+    "style": "Indian",
+    "blanketForm": "Comforter",
+    "ageRange": "Adult",
+    "productDimensions": "2.28L x 1.52W Meters",
+    "theme": "Floral",
+    "pattern": "Floral",
+    "productDescription": "Elevate your bedroom aesthetics with our Premium Cotton Premium Cotton VIKING Bedsheet featuring an intricate design in bold red and orange hues. Crafted from 100% pure cotton, this bedsheet brings both style and comfort, making it perfect for modern and traditional interiors alike. Its fine texture and breathable fabric ensure a luxurious sleeping experience while adding vibrancy to your space.",
+    "keyFeatures": [
+      	"Superior Cotton Quality - Soft, lightweight, and gentle on the skin.",
+      	"Striking Checkered Design - Classic yet trendy grid patterns for an eye-catching look.",
+      	"Dual-Tone Appeal - Vibrant red and orange shades for a bold and sophisticated aesthetic.",
+      	"Durable & Long-Lasting - Made to withstand daily use with high-quality stitching.",
+      	"Easy to Maintain - Machine washable with fade-resistant colors.",
+        "Why Choose This Bedsheet?",
+"This bedsheet is designed to offer a mix of modern style and durability, making it ideal for everyday use, guest rooms, or gifting on special occasions."
+
+    ],
+    "Specifications": [
+      	"Material: 100% Pure Cotton",
+      	"Design: Dual-Tone Checkered Pattern (Red & Orange)",
+      	"Sizes Available: Single, Double, and King",
+      	"Care Instructions: Machine wash cold, tumble dry on low",
+      	"Package Includes: 1 Bedsheet"
+      
+    ]
+  },
+  {
+    "_id": 5,
+    "name": "Affordable Cotton Checkered Bedsheet – Vibrant Dual Color Price ",
+    "description":"Affordable Cotton Checkered Bedsheet. Featuring a classic grid design in bold red and orange hues, ",
+    "price": 199,
+    "image": "/images/Checked.png",
+    "images": [
+      "/images/Checked.png",
+      "/images/Checked.png",
+      "/images/Checked.png",
+      "/images/Checked.png"
+    ],
+    "rating": 4.7,
+    "material": "Cotton",
+    "color": "8 colours available",
+    "brand": "Tinykarts",
+    "specialFeature": "Fade Resistant",
+    "style": "Indian",
+    "blanketForm": "Comforter",
+    "ageRange": "Adult",
+    "productDimensions": "2.28L x 1.52W Meters",
+    "theme": "Floral",
+    "pattern": "Floral",
+    "productDescription": "Upgrade your bedroom decor on a budget with our Affordable Cotton Checkered Bedsheet. Featuring a classic grid design in bold red and orange hues, this bedsheet combines style, comfort, and value for money. Made from soft, breathable cotton-blend fabric, it ensures a cozy sleeping experience without breaking the bank.",
+    "keyFeatures": [
+      	"Budget-Friendly - Priced at just ₹199, offering unbeatable value.",
+      	"Stylish Design - Elegant checkered patterns with vibrant colors to brighten up your space.",
+      	"Soft & Lightweight - Made with comfortable, skin-friendly cotton-blend material.",
+      	"Easy to Wash - Machine washable and quick to dry, perfect for everyday use.",
+      	"Durable Quality - Designed to last with fade-resistant colors and strong stitching."    
+    ],
+    "Specifications": [
+      "Material: Cotton-Blend",
+      "Design: Checkered Pattern (Red & Orange)",
+      "Dimensions: Standard Single/Double Sizes",
+      "Care Instructions: Machine wash cold, air dry for best results"
+      
+    ]
+  },
+  {
+    "_id": 6,
+    "name": "Govindaraja 100% Cotton",
     "description": "High-quality wireless headphones with noise cancellation.",
     "price": 79.99,
-    "image": "/images/Product _1Main.webp",
+    "image": "/images/bed6.png",
     "images": [
-      "/images/Product_12.webp",
-      "/images/Product_3.webp",
-      "/images/Product_1Main.webp",
-      "/images/Product_4.webp"
+      "/images/Product_22.png",
+      "/images/Product_23.png",
+      "/images/Product_21.png",
+      "/images/Product2.png"
     ],
     "rating": 4.7,
     "material": "Cotton",
@@ -21,134 +222,28 @@
     "ageRange": "Adult",
     "productDimensions": "2.28L x 1.52W Meters",
     "theme": "Floral",
-    "pattern": "Floral"
+    "pattern": "Floral",
+    "productDescription": "Transform your bedroom into a haven of relaxation with our premium cotton bedsheets. Crafted to perfection, these bedsheets combine luxurious softness, vibrant designs, and long-lasting durability to meet your comfort needs.",
+    "keyFeatures": [
+      "100% Pure Cotton: Breathable fabric for a cool and comfortable sleep.",
+      "Thread Count: Available in 200, 300, and 400 thread counts for a silky-smooth texture.",
+      "Vibrant Prints & Solid Colors: Choose from a wide range of designs to complement your home decor.",
+      "Size Options: Suitable for Single, Queen, and King beds.",
+      "Fade-Resistant & Durable: Made with high-quality dyes to ensure long-lasting colors."
+    ],
+    "careInstructions": [
+      "Machine washable in cold water.",
+      "Tumble dry on low heat.",
+      "Do not bleach to maintain fabric integrity."
+    ]
   },
 
-  {
-      "_id": 2,
-      "name": "Govindaraja 100% Cotton ",
-      "description": "High-quality wireless headphones with noise cancellation.",
-      "price": 99.99,
-      "image": "/images/bed2.png",
-      "images": [
-        "/images/Product _22.png",
-        "/images/Product _23.png",
-        "/images/Product _21.png",
-        "/images/Product2.png"
-      ],
-      "rating": 4.2,
-      "material": "Cotton",
-      "color": "Multicolour",
-      "brand": "Tinykarts",
-      "specialFeature": "Fade Resistant",
-      "style": "Indian",
-      "blanketForm": "Comforter",
-      "ageRange": "Adult",
-      "productDimensions": "2.28L x 1.52W Meters",
-      "theme": "Floral",
-      "pattern": "Floral"
-    },
-    {
-      "_id": 3,
-      "name": "Govindaraja 100% Cotton ",
-      "description": "High-quality wireless headphones with noise cancellation.",
-      "price": 49.99,
-      "image": "/images/Product _1Main.webp",
-      "images": [
-        "/images/Product _32.png",
-        "/images/Product _33.png",
-        "/images/Product3.png",
-        "/images/Product_33.png"
-      ],
-      "rating": 5,
-      "material": "Cotton",
-      "color": "Multicolour",
-      "brand": "Tinykarts",
-      "specialFeature": "Fade Resistant",
-      "style": "Indian",
-      "blanketForm": "Comforter",
-      "ageRange": "Adult",
-      "productDimensions": "2.28L x 1.52W Meters",
-      "theme": "Floral",
-      "pattern": "Floral"
-    },
-    {
-      "_id": 4,
-      "name": "Govindaraja 100% Cotton ",
-      "description": "High-quality wireless headphones with noise cancellation.",
-      "price": 179.99,
-      "image": "/images/Product _1Main.webp",
-      "images": [
-        "/images/Product _42.png",
-        "/images/Product _43.png",
-        "/images/Product _41.png",
-        "/images/Product4.png"
-      ],
-      "rating": 4.2,
-      "material": "Cotton",
-      "color": "Multicolour",
-      "brand": "Tinykarts",
-      "specialFeature": "Fade Resistant",
-      "style": "Indian",
-      "blanketForm": "Comforter",
-      "ageRange": "Adult",
-      "productDimensions": "2.28L x 1.52W Meters",
-      "theme": "Floral",
-      "pattern": "Floral"
-    },
-    {
-      "_id": 5,
-      "name": "Govindaraja 100% Cotton ",
-      "description": "High-quality wireless headphones with noise cancellation.",
-      "price": 19.99,
-      "image": "/images/Product _1Main.webp",
-      "images": [
-        "/images/Product _52.png",
-        "/images/Product _53.png",
-        "/images/Product _51.png",
-        "/images/Product5.png"
-      ],
-      "rating": 4.7,
-      "material": "Cotton",
-      "color": "Multicolour",
-      "brand": "Tinykarts",
-      "specialFeature": "Fade Resistant",
-      "style": "Indian",
-      "blanketForm": "Comforter",
-      "ageRange": "Adult",
-      "productDimensions": "2.28L x 1.52W Meters",
-      "theme": "Floral",
-      "pattern": "Floral"
-    },
-    {
-      "_id": 6,
-      "name": "Govindaraja 100% Cotton ",
-      "description": "High-quality wireless headphones with noise cancellation.",
-      "price": 79.99,
-      "image": "/images/bed6.png",
-      "images": [
-        "/images/Product _22.png",
-        "/images/Product _23.png",
-        "/images/Product _21.png",
-        "/images/Product2.png"
-      ],
-      "rating": 4.7,
-      "material": "Cotton",
-      "color": "Multicolour",
-      "brand": "Tinykarts",
-      "specialFeature": "Fade Resistant",
-      "style": "Indian",
-      "blanketForm": "Comforter",
-      "ageRange": "Adult",
-      "productDimensions": "2.28L x 1.52W Meters",
-      "theme": "Floral",
-      "pattern": "Floral"
-    },
+
     {
       "_id": 11,
       "name": "Govindaraja 100% Cotton ",
       "description": "High-quality wireless headphones with noise cancellation.",
-      "price": 79.99,
+      "price": 74.4,
       "image": "/images/gift1.png",
       "images": [
         "/images/Product _11.png",
@@ -166,7 +261,22 @@
       "ageRange": "Adult",
       "productDimensions": "2.28L x 1.52W Meters",
       "theme": "Floral",
-      "pattern": "Floral"
+      "pattern": "Floral",
+      "productDescription": "Upgrade your bedroom decor on a budget with our Affordable Cotton Checkered Bedsheet. Featuring a classic grid design in bold red and orange hues, this bedsheet combines style, comfort, and value for money. Made from soft, breathable cotton-blend fabric, it ensures a cozy sleeping experience without breaking the bank.",
+      "keyFeatures": [
+          "Budget-Friendly - Priced at just ₹199, offering unbeatable value.",
+          "Stylish Design - Elegant checkered patterns with vibrant colors to brighten up your space.",
+          "Soft & Lightweight - Made with comfortable, skin-friendly cotton-blend material.",
+          "Easy to Wash - Machine washable and quick to dry, perfect for everyday use.",
+          "Durable Quality - Designed to last with fade-resistant colors and strong stitching."    
+      ],
+      "Specifications": [
+        "Material: Cotton-Blend",
+        "Design: Checkered Pattern (Red & Orange)",
+        "Dimensions: Standard Single/Double Sizes",
+        "Care Instructions: Machine wash cold, air dry for best results"
+        
+      ]
     },
     {
       "_id": 12,
@@ -190,7 +300,22 @@
       "ageRange": "Adult",
       "productDimensions": "2.28L x 1.52W Meters",
       "theme": "Floral",
-      "pattern": "Floral"
+      "pattern": "Floral",
+      "productDescription": "Upgrade your bedroom decor on a budget with our Affordable Cotton Checkered Bedsheet. Featuring a classic grid design in bold red and orange hues, this bedsheet combines style, comfort, and value for money. Made from soft, breathable cotton-blend fabric, it ensures a cozy sleeping experience without breaking the bank.",
+      "keyFeatures": [
+          "Budget-Friendly - Priced at just ₹199, offering unbeatable value.",
+          "Stylish Design - Elegant checkered patterns with vibrant colors to brighten up your space.",
+          "Soft & Lightweight - Made with comfortable, skin-friendly cotton-blend material.",
+          "Easy to Wash - Machine washable and quick to dry, perfect for everyday use.",
+          "Durable Quality - Designed to last with fade-resistant colors and strong stitching."    
+      ],
+      "Specifications": [
+        "Material: Cotton-Blend",
+        "Design: Checkered Pattern (Red & Orange)",
+        "Dimensions: Standard Single/Double Sizes",
+        "Care Instructions: Machine wash cold, air dry for best results"
+        
+      ]
     },
 
     {
@@ -215,7 +340,22 @@
         "ageRange": "Adult",
         "productDimensions": "2.28L x 1.52W Meters",
         "theme": "Floral",
-        "pattern": "Floral"
+        "pattern": "Floral",
+        "productDescription": "Upgrade your bedroom decor on a budget with our Affordable Cotton Checkered Bedsheet. Featuring a classic grid design in bold red and orange hues, this bedsheet combines style, comfort, and value for money. Made from soft, breathable cotton-blend fabric, it ensures a cozy sleeping experience without breaking the bank.",
+        "keyFeatures": [
+            "Budget-Friendly - Priced at just ₹199, offering unbeatable value.",
+            "Stylish Design - Elegant checkered patterns with vibrant colors to brighten up your space.",
+            "Soft & Lightweight - Made with comfortable, skin-friendly cotton-blend material.",
+            "Easy to Wash - Machine washable and quick to dry, perfect for everyday use.",
+            "Durable Quality - Designed to last with fade-resistant colors and strong stitching."    
+        ],
+        "Specifications": [
+          "Material: Cotton-Blend",
+          "Design: Checkered Pattern (Red & Orange)",
+          "Dimensions: Standard Single/Double Sizes",
+          "Care Instructions: Machine wash cold, air dry for best results"
+          
+        ]
       },
       {
         "_id": 14,
@@ -239,7 +379,22 @@
         "ageRange": "Adult",
         "productDimensions": "2.28L x 1.52W Meters",
         "theme": "Floral",
-        "pattern": "Floral"
+        "pattern": "Floral",
+        "productDescription": "Upgrade your bedroom decor on a budget with our Affordable Cotton Checkered Bedsheet. Featuring a classic grid design in bold red and orange hues, this bedsheet combines style, comfort, and value for money. Made from soft, breathable cotton-blend fabric, it ensures a cozy sleeping experience without breaking the bank.",
+        "keyFeatures": [
+            "Budget-Friendly - Priced at just ₹199, offering unbeatable value.",
+            "Stylish Design - Elegant checkered patterns with vibrant colors to brighten up your space.",
+            "Soft & Lightweight - Made with comfortable, skin-friendly cotton-blend material.",
+            "Easy to Wash - Machine washable and quick to dry, perfect for everyday use.",
+            "Durable Quality - Designed to last with fade-resistant colors and strong stitching."    
+        ],
+        "Specifications": [
+          "Material: Cotton-Blend",
+          "Design: Checkered Pattern (Red & Orange)",
+          "Dimensions: Standard Single/Double Sizes",
+          "Care Instructions: Machine wash cold, air dry for best results"
+          
+        ]
       },
       {
         "_id": 15,
@@ -264,7 +419,22 @@
         "ageRange": "Adult",
         "productDimensions": "2.28L x 1.52W Meters",
         "theme": "Floral",
-        "pattern": "Floral"
+        "pattern": "Floral",
+        "productDescription": "Upgrade your bedroom decor on a budget with our Affordable Cotton Checkered Bedsheet. Featuring a classic grid design in bold red and orange hues, this bedsheet combines style, comfort, and value for money. Made from soft, breathable cotton-blend fabric, it ensures a cozy sleeping experience without breaking the bank.",
+        "keyFeatures": [
+            "Budget-Friendly - Priced at just ₹199, offering unbeatable value.",
+            "Stylish Design - Elegant checkered patterns with vibrant colors to brighten up your space.",
+            "Soft & Lightweight - Made with comfortable, skin-friendly cotton-blend material.",
+            "Easy to Wash - Machine washable and quick to dry, perfect for everyday use.",
+            "Durable Quality - Designed to last with fade-resistant colors and strong stitching."    
+        ],
+        "Specifications": [
+          "Material: Cotton-Blend",
+          "Design: Checkered Pattern (Red & Orange)",
+          "Dimensions: Standard Single/Double Sizes",
+          "Care Instructions: Machine wash cold, air dry for best results"
+          
+        ]
       },
       {
         "_id": 16,
@@ -289,7 +459,22 @@
         "ageRange": "Adult",
         "productDimensions": "2.28L x 1.52W Meters",
         "theme": "Floral",
-        "pattern": "Floral"
+        "pattern": "Floral",
+        "productDescription": "Upgrade your bedroom decor on a budget with our Affordable Cotton Checkered Bedsheet. Featuring a classic grid design in bold red and orange hues, this bedsheet combines style, comfort, and value for money. Made from soft, breathable cotton-blend fabric, it ensures a cozy sleeping experience without breaking the bank.",
+        "keyFeatures": [
+            "Budget-Friendly - Priced at just ₹199, offering unbeatable value.",
+            "Stylish Design - Elegant checkered patterns with vibrant colors to brighten up your space.",
+            "Soft & Lightweight - Made with comfortable, skin-friendly cotton-blend material.",
+            "Easy to Wash - Machine washable and quick to dry, perfect for everyday use.",
+            "Durable Quality - Designed to last with fade-resistant colors and strong stitching."    
+        ],
+        "Specifications": [
+          "Material: Cotton-Blend",
+          "Design: Checkered Pattern (Red & Orange)",
+          "Dimensions: Standard Single/Double Sizes",
+          "Care Instructions: Machine wash cold, air dry for best results"
+          
+        ]
       },
       {
         "_id": 21,
@@ -313,7 +498,22 @@
         "ageRange": "Adult",
         "productDimensions": "2.28L x 1.52W Meters",
         "theme": "Floral",
-        "pattern": "Floral"
+        "pattern": "Floral",
+        "productDescription": "Upgrade your bedroom decor on a budget with our Affordable Cotton Checkered Bedsheet. Featuring a classic grid design in bold red and orange hues, this bedsheet combines style, comfort, and value for money. Made from soft, breathable cotton-blend fabric, it ensures a cozy sleeping experience without breaking the bank.",
+        "keyFeatures": [
+            "Budget-Friendly - Priced at just ₹199, offering unbeatable value.",
+            "Stylish Design - Elegant checkered patterns with vibrant colors to brighten up your space.",
+            "Soft & Lightweight - Made with comfortable, skin-friendly cotton-blend material.",
+            "Easy to Wash - Machine washable and quick to dry, perfect for everyday use.",
+            "Durable Quality - Designed to last with fade-resistant colors and strong stitching."    
+        ],
+        "Specifications": [
+          "Material: Cotton-Blend",
+          "Design: Checkered Pattern (Red & Orange)",
+          "Dimensions: Standard Single/Double Sizes",
+          "Care Instructions: Machine wash cold, air dry for best results"
+          
+        ]
       },
       {
         "_id": 22,
@@ -337,7 +537,22 @@
         "ageRange": "Adult",
         "productDimensions": "2.28L x 1.52W Meters",
         "theme": "Floral",
-        "pattern": "Floral"
+        "pattern": "Floral",
+        "productDescription": "Upgrade your bedroom decor on a budget with our Affordable Cotton Checkered Bedsheet. Featuring a classic grid design in bold red and orange hues, this bedsheet combines style, comfort, and value for money. Made from soft, breathable cotton-blend fabric, it ensures a cozy sleeping experience without breaking the bank.",
+        "keyFeatures": [
+            "Budget-Friendly - Priced at just ₹199, offering unbeatable value.",
+            "Stylish Design - Elegant checkered patterns with vibrant colors to brighten up your space.",
+            "Soft & Lightweight - Made with comfortable, skin-friendly cotton-blend material.",
+            "Easy to Wash - Machine washable and quick to dry, perfect for everyday use.",
+            "Durable Quality - Designed to last with fade-resistant colors and strong stitching."    
+        ],
+        "Specifications": [
+          "Material: Cotton-Blend",
+          "Design: Checkered Pattern (Red & Orange)",
+          "Dimensions: Standard Single/Double Sizes",
+          "Care Instructions: Machine wash cold, air dry for best results"
+          
+        ]
       },
       {
           "_id": 23,
@@ -361,7 +576,22 @@
           "ageRange": "Adult",
           "productDimensions": "2.28L x 1.52W Meters",
           "theme": "Floral",
-          "pattern": "Floral"
+          "pattern": "Floral",
+          "productDescription": "Upgrade your bedroom decor on a budget with our Affordable Cotton Checkered Bedsheet. Featuring a classic grid design in bold red and orange hues, this bedsheet combines style, comfort, and value for money. Made from soft, breathable cotton-blend fabric, it ensures a cozy sleeping experience without breaking the bank.",
+          "keyFeatures": [
+              "Budget-Friendly - Priced at just ₹199, offering unbeatable value.",
+              "Stylish Design - Elegant checkered patterns with vibrant colors to brighten up your space.",
+              "Soft & Lightweight - Made with comfortable, skin-friendly cotton-blend material.",
+              "Easy to Wash - Machine washable and quick to dry, perfect for everyday use.",
+              "Durable Quality - Designed to last with fade-resistant colors and strong stitching."    
+          ],
+          "Specifications": [
+            "Material: Cotton-Blend",
+            "Design: Checkered Pattern (Red & Orange)",
+            "Dimensions: Standard Single/Double Sizes",
+            "Care Instructions: Machine wash cold, air dry for best results"
+            
+          ]
         },
     
         {
@@ -386,7 +616,22 @@
             "ageRange": "Adult",
             "productDimensions": "2.28L x 1.52W Meters",
             "theme": "Floral",
-            "pattern": "Floral"
+            "pattern": "Floral",
+            "productDescription": "Upgrade your bedroom decor on a budget with our Affordable Cotton Checkered Bedsheet. Featuring a classic grid design in bold red and orange hues, this bedsheet combines style, comfort, and value for money. Made from soft, breathable cotton-blend fabric, it ensures a cozy sleeping experience without breaking the bank.",
+    "keyFeatures": [
+      	"Budget-Friendly - Priced at just ₹199, offering unbeatable value.",
+      	"Stylish Design - Elegant checkered patterns with vibrant colors to brighten up your space.",
+      	"Soft & Lightweight - Made with comfortable, skin-friendly cotton-blend material.",
+      	"Easy to Wash - Machine washable and quick to dry, perfect for everyday use.",
+      	"Durable Quality - Designed to last with fade-resistant colors and strong stitching."    
+    ],
+    "Specifications": [
+      "Material: Cotton-Blend",
+      "Design: Checkered Pattern (Red & Orange)",
+      "Dimensions: Standard Single/Double Sizes",
+      "Care Instructions: Machine wash cold, air dry for best results"
+      
+    ]
           },
           {
             "_id": 25,
@@ -410,7 +655,22 @@
             "ageRange": "Adult",
             "productDimensions": "2.28L x 1.52W Meters",
             "theme": "Floral",
-            "pattern": "Floral"
+            "pattern": "Floral",
+            "productDescription": "Upgrade your bedroom decor on a budget with our Affordable Cotton Checkered Bedsheet. Featuring a classic grid design in bold red and orange hues, this bedsheet combines style, comfort, and value for money. Made from soft, breathable cotton-blend fabric, it ensures a cozy sleeping experience without breaking the bank.",
+            "keyFeatures": [
+                "Budget-Friendly - Priced at just ₹199, offering unbeatable value.",
+                "Stylish Design - Elegant checkered patterns with vibrant colors to brighten up your space.",
+                "Soft & Lightweight - Made with comfortable, skin-friendly cotton-blend material.",
+                "Easy to Wash - Machine washable and quick to dry, perfect for everyday use.",
+                "Durable Quality - Designed to last with fade-resistant colors and strong stitching."    
+            ],
+            "Specifications": [
+              "Material: Cotton-Blend",
+              "Design: Checkered Pattern (Red & Orange)",
+              "Dimensions: Standard Single/Double Sizes",
+              "Care Instructions: Machine wash cold, air dry for best results"
+              
+            ]
           },
           {
             "_id": 26,
@@ -434,7 +694,22 @@
             "ageRange": "Adult",
             "productDimensions": "2.28L x 1.52W Meters",
             "theme": "Floral",
-            "pattern": "Floral"
+            "pattern": "Floral",
+            "productDescription": "Upgrade your bedroom decor on a budget with our Affordable Cotton Checkered Bedsheet. Featuring a classic grid design in bold red and orange hues, this bedsheet combines style, comfort, and value for money. Made from soft, breathable cotton-blend fabric, it ensures a cozy sleeping experience without breaking the bank.",
+            "keyFeatures": [
+                "Budget-Friendly - Priced at just ₹199, offering unbeatable value.",
+                "Stylish Design - Elegant checkered patterns with vibrant colors to brighten up your space.",
+                "Soft & Lightweight - Made with comfortable, skin-friendly cotton-blend material.",
+                "Easy to Wash - Machine washable and quick to dry, perfect for everyday use.",
+                "Durable Quality - Designed to last with fade-resistant colors and strong stitching."    
+            ],
+            "Specifications": [
+              "Material: Cotton-Blend",
+              "Design: Checkered Pattern (Red & Orange)",
+              "Dimensions: Standard Single/Double Sizes",
+              "Care Instructions: Machine wash cold, air dry for best results"
+              
+            ]
           },
           {
             "_id": 31,
@@ -458,7 +733,22 @@
             "ageRange": "Adult",
             "productDimensions": "2.28L x 1.52W Meters",
             "theme": "Floral",
-            "pattern": "Floral"
+            "pattern": "Floral",
+            "productDescription": "Upgrade your bedroom decor on a budget with our Affordable Cotton Checkered Bedsheet. Featuring a classic grid design in bold red and orange hues, this bedsheet combines style, comfort, and value for money. Made from soft, breathable cotton-blend fabric, it ensures a cozy sleeping experience without breaking the bank.",
+            "keyFeatures": [
+                "Budget-Friendly - Priced at just ₹199, offering unbeatable value.",
+                "Stylish Design - Elegant checkered patterns with vibrant colors to brighten up your space.",
+                "Soft & Lightweight - Made with comfortable, skin-friendly cotton-blend material.",
+                "Easy to Wash - Machine washable and quick to dry, perfect for everyday use.",
+                "Durable Quality - Designed to last with fade-resistant colors and strong stitching."    
+            ],
+            "Specifications": [
+              "Material: Cotton-Blend",
+              "Design: Checkered Pattern (Red & Orange)",
+              "Dimensions: Standard Single/Double Sizes",
+              "Care Instructions: Machine wash cold, air dry for best results"
+              
+            ]
           },
           {
             "_id":32,
@@ -482,7 +772,22 @@
             "ageRange": "Adult",
             "productDimensions": "2.28L x 1.52W Meters",
             "theme": "Floral",
-            "pattern": "Floral"
+            "pattern": "Floral",
+            "productDescription": "Upgrade your bedroom decor on a budget with our Affordable Cotton Checkered Bedsheet. Featuring a classic grid design in bold red and orange hues, this bedsheet combines style, comfort, and value for money. Made from soft, breathable cotton-blend fabric, it ensures a cozy sleeping experience without breaking the bank.",
+            "keyFeatures": [
+                "Budget-Friendly - Priced at just ₹199, offering unbeatable value.",
+                "Stylish Design - Elegant checkered patterns with vibrant colors to brighten up your space.",
+                "Soft & Lightweight - Made with comfortable, skin-friendly cotton-blend material.",
+                "Easy to Wash - Machine washable and quick to dry, perfect for everyday use.",
+                "Durable Quality - Designed to last with fade-resistant colors and strong stitching."    
+            ],
+            "Specifications": [
+              "Material: Cotton-Blend",
+              "Design: Checkered Pattern (Red & Orange)",
+              "Dimensions: Standard Single/Double Sizes",
+              "Care Instructions: Machine wash cold, air dry for best results"
+              
+            ]
           },
           {
             "_id": 33,
@@ -506,7 +811,22 @@
             "ageRange": "Adult",
             "productDimensions": "2.28L x 1.52W Meters",
             "theme": "Floral",
-            "pattern": "Floral"
+            "pattern": "Floral",
+            "productDescription": "Upgrade your bedroom decor on a budget with our Affordable Cotton Checkered Bedsheet. Featuring a classic grid design in bold red and orange hues, this bedsheet combines style, comfort, and value for money. Made from soft, breathable cotton-blend fabric, it ensures a cozy sleeping experience without breaking the bank.",
+            "keyFeatures": [
+                "Budget-Friendly - Priced at just ₹199, offering unbeatable value.",
+                "Stylish Design - Elegant checkered patterns with vibrant colors to brighten up your space.",
+                "Soft & Lightweight - Made with comfortable, skin-friendly cotton-blend material.",
+                "Easy to Wash - Machine washable and quick to dry, perfect for everyday use.",
+                "Durable Quality - Designed to last with fade-resistant colors and strong stitching."    
+            ],
+            "Specifications": [
+              "Material: Cotton-Blend",
+              "Design: Checkered Pattern (Red & Orange)",
+              "Dimensions: Standard Single/Double Sizes",
+              "Care Instructions: Machine wash cold, air dry for best results"
+              
+            ]
           },
           {
               "_id": 34,
@@ -530,7 +850,22 @@
               "ageRange": "Adult",
               "productDimensions": "2.28L x 1.52W Meters",
               "theme": "Floral",
-              "pattern": "Floral"
+              "pattern": "Floral",
+              "productDescription": "Upgrade your bedroom decor on a budget with our Affordable Cotton Checkered Bedsheet. Featuring a classic grid design in bold red and orange hues, this bedsheet combines style, comfort, and value for money. Made from soft, breathable cotton-blend fabric, it ensures a cozy sleeping experience without breaking the bank.",
+              "keyFeatures": [
+                  "Budget-Friendly - Priced at just ₹199, offering unbeatable value.",
+                  "Stylish Design - Elegant checkered patterns with vibrant colors to brighten up your space.",
+                  "Soft & Lightweight - Made with comfortable, skin-friendly cotton-blend material.",
+                  "Easy to Wash - Machine washable and quick to dry, perfect for everyday use.",
+                  "Durable Quality - Designed to last with fade-resistant colors and strong stitching."    
+              ],
+              "Specifications": [
+                "Material: Cotton-Blend",
+                "Design: Checkered Pattern (Red & Orange)",
+                "Dimensions: Standard Single/Double Sizes",
+                "Care Instructions: Machine wash cold, air dry for best results"
+                
+              ]
             },
         
             {
@@ -555,7 +890,22 @@
                 "ageRange": "Adult",
                 "productDimensions": "2.28L x 1.52W Meters",
                 "theme": "Floral",
-                "pattern": "Floral"
+                "pattern": "Floral",
+                "productDescription": "Upgrade your bedroom decor on a budget with our Affordable Cotton Checkered Bedsheet. Featuring a classic grid design in bold red and orange hues, this bedsheet combines style, comfort, and value for money. Made from soft, breathable cotton-blend fabric, it ensures a cozy sleeping experience without breaking the bank.",
+    "keyFeatures": [
+      	"Budget-Friendly - Priced at just ₹199, offering unbeatable value.",
+      	"Stylish Design - Elegant checkered patterns with vibrant colors to brighten up your space.",
+      	"Soft & Lightweight - Made with comfortable, skin-friendly cotton-blend material.",
+      	"Easy to Wash - Machine washable and quick to dry, perfect for everyday use.",
+      	"Durable Quality - Designed to last with fade-resistant colors and strong stitching."    
+    ],
+    "Specifications": [
+      "Material: Cotton-Blend",
+      "Design: Checkered Pattern (Red & Orange)",
+      "Dimensions: Standard Single/Double Sizes",
+      "Care Instructions: Machine wash cold, air dry for best results"
+      
+    ]
               },
               {
                 "_id": 36,
@@ -579,7 +929,22 @@
                 "ageRange": "Adult",
                 "productDimensions": "2.28L x 1.52W Meters",
                 "theme": "Floral",
-                "pattern": "Floral"
+                "pattern": "Floral",
+                "productDescription": "Upgrade your bedroom decor on a budget with our Affordable Cotton Checkered Bedsheet. Featuring a classic grid design in bold red and orange hues, this bedsheet combines style, comfort, and value for money. Made from soft, breathable cotton-blend fabric, it ensures a cozy sleeping experience without breaking the bank.",
+    "keyFeatures": [
+      	"Budget-Friendly - Priced at just ₹199, offering unbeatable value.",
+      	"Stylish Design - Elegant checkered patterns with vibrant colors to brighten up your space.",
+      	"Soft & Lightweight - Made with comfortable, skin-friendly cotton-blend material.",
+      	"Easy to Wash - Machine washable and quick to dry, perfect for everyday use.",
+      	"Durable Quality - Designed to last with fade-resistant colors and strong stitching."    
+    ],
+    "Specifications": [
+      "Material: Cotton-Blend",
+      "Design: Checkered Pattern (Red & Orange)",
+      "Dimensions: Standard Single/Double Sizes",
+      "Care Instructions: Machine wash cold, air dry for best results"
+      
+    ]
               }
              
                   

@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import Bg from "/Bg.png"
 // import './src/index.css'
 
 const TinyCarts = () => {
@@ -28,13 +29,14 @@ const TinyCarts = () => {
       <section>
         <div className="head1">
         <h1 className=" text text-4xl sm:text-6xl font-bold text-indigo-700 animate-bounce transition duration-500 ease-in-out">
-            Welcome to <span className="text-teal-500-4xl text ">Tinykarts</span>
+            Welcome to <span className="text-teal-500-4xl text " >Tinykarts</span>
           </h1>
-          <span id="class"> Empowering Local Artisans, Connecting Global Markets</span>
+          <span id="class" > Empowering Local Artisans, Connecting Global Markets</span>
         </div>
 
         <div className="banner">
           <div className="slide">
+      
           <p
         data-aos="fade-right"
         data-aos-delay="100"
@@ -55,7 +57,7 @@ const TinyCarts = () => {
               data-aos-duration="1000"
             >
               {/* React Slick Slider */}
-              <Slider {...settings} className="border-2">
+              <Slider {...settings} className="border-2 Top">
                 <div>
                   <img
                     src={shp1}

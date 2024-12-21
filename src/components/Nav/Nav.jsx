@@ -85,12 +85,12 @@ const Navbar = () => {
               <div className="dropdown-content">
                 <Link to="/craft">Handcrafted Home Décor</Link>
                 <Link to="/Organic-products">Organic and Sustainable Goods</Link>
-                <Link to="/Bedshit-products">Traditional Wear and Accessories</Link>
+                <Link to="/Bedsheet-products">Traditional Wear and Accessories</Link>
                 <Link to="/Gift-products">Unique Gifts and Souvenirs</Link>
               </div>
             </li>
             <li>
-              <Link to="/contact" className="nav-item">Contact</Link>
+            <Link to="/Contact" className="nav-item">Contact</Link>
             </li>
           </ul>
         </div>

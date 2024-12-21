@@ -90,7 +90,7 @@ const Accounts = () => {
               Change Password
             </button>
             <button onClick={() => setCurrentView("email")} className="password-co">
-              Change Email
+              Edit Profile
             </button>
           </div>
           </div>

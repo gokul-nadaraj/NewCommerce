@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* body {
+    font-family: "Poppins", serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+} */
+
+/* Contact Section Wrapper */
+.contact-section-wrapper {
+    padding: 60px 20px;
+    text-align: center;
+    margin: 100px auto;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: "Poppins", serif;
+}
+#Black{
+    color: black;
+
+}
+
+/* Heading Styles */
+.contact-section-wrapper h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+
+/* Paragraph Styles */
+.contact-section-wrapper p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: #7f8c8d;
+}
+
+/* Contact Info Wrapper */
+.contact-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: "Poppins", serif;
+}
+
+/* Individual Contact Info Cards */
+.contact-info-card {
+    background-color: #2ecc71;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    color: #fff;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Contact Info Card Header */
+.contact-info-card h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/* Contact Info List */
+.contact-info-card ul {
+    list-style-type: none;
+    padding: 0;
+    color: #fff;
+}
+
+.contact-info-card ul li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* 3D Hover Effect */
+.contact-info-card:hover {
+    transform: translateY(-5px);
+    background-color: #27ae60; /* Darker Green on Hover */
+}
+
+/* Link Styling for Contact Info */
+.contact-info-card a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-info-card a:hover {
+    color: #16a085;
+    transform: scale(1.1);
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .contact-section-wrapper {
+        padding: 40px 15px;
+        margin: 20px;
+    }
+
+    .contact-section-wrapper h1 {
+        font-size: 2rem;
+    }
+}
+.contact-section-wrapper p {
+    
+    color: white;
+}

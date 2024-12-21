@@ -99,7 +99,7 @@ const Bedproduct = () => {
   return (
     <>
       <div className="product">
-        <h1 className="header-name">Gift Products</h1>
+        <h1 className="header-name">BedSheet Products</h1>
         <div className="product-list">
           {products.map((product) => {
             const cartItem = cart.items.find((item) => item._id === product._id);

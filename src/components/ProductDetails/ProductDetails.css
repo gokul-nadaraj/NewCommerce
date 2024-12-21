@@ -15,7 +15,7 @@
     width: 100%;
     max-width: 1200px;
   }
-  
+
   .side-images {
     flex: 1;
     display: flex;
@@ -205,4 +205,90 @@ width: 30%;
       margin: 10px;
     }
   }
+  .about-us {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
   
+  .about-us h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .about-us p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  /* Basic container for the quantity control */
+.quantity-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 150px;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+/* Style for the decrement button */
+.decrement-button {
+  width: 40px;
+  height: 40px;
+  background-color: #e74c3c;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.decrement-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.decrement-button:hover:not(:disabled) {
+  background-color: #c0392b;
+  transform: scale(1.1);
+}
+
+/* Style for the quantity display */
+.quantity-display {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Style for the increment button */
+.increment-button {
+  width: 40px;
+  height: 40px;
+  background-color: #2ecc71;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.increment-button:hover {
+  background-color: #27ae60;
+  transform: scale(1.1);
+}
+.gap-4 {
+  gap: 1rem !important;
+}
+.text-gray-600 {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+  text-align: justify;
+}
+

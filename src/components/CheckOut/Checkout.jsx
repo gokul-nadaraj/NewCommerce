@@ -31,11 +31,6 @@ const Checkout = () => {
     }
   }, [selectedCourier]);
 
-  
-  
-  
-  
-  
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       if (!currentUser) {
@@ -64,9 +59,7 @@ const Checkout = () => {
   const [currentEditAddress, setCurrentEditAddress] = useState(null);
   const [savedAddresses, setSavedAddresses] = useState([]);
   const [selectedAddress, setSelectedAddress] = useState(null); // Track the selected address
-  const [editAddress, setEditAddress] = useState(null);
-
-
+  const [addressesVisible, setAddressesVisible] = useState(false);
 
   // Fetch saved addresses for the logged-in user
   const fetchUserAddresses = async () => {
@@ -142,59 +135,28 @@ const Checkout = () => {
     }
   };
 
-
-  const reorderAddresses = (addresses, selected) => {
-    const updated = addresses.filter(address => address.id !== selected.id);
-    return [selected, ...updated].map((address, index) => ({
-      ...address,
-      isDefault: index === 0,
-    }));
+  const handleChangeAddressClick = () => {
+    setShowAllAddresses(!showAllAddresses); // Toggle the visibility of the address list
+    setAddressesVisible(true); // Trigger the animation for each address card
   };
   
 
-  const handleUseThisLocation = async () => {
-    if (!selectedAddress || savedAddresses[0]?.id === selectedAddress.id) return;
-  
-    const finalAddresses = reorderAddresses(savedAddresses, selectedAddress);
-  
-    try {
-      const userRef = doc(db, "users", user.uid);
-      await updateDoc(userRef, { addresses: finalAddresses });
-      setSavedAddresses(finalAddresses);
-      setShowAllAddresses(false); // Close the address list after selecting "Delivery Here"
-      toast.success("Address updated successfully!");
-    } catch (error) {
-      console.error("Error updating addresses:", error);
-      toast.error("Failed to update address.");
-    }
-  };
-  
+ 
 
 
 
 
 
-  // Reset form data
-  const resetForm = () => {
-    setFormData({
-      firstName: "",
-      lastName: "",
-      addressLine1: "",
-      addressLine2: "",
-      state: "",
-      country: "",
-      mobileNo: "",
-      pincode: "",
-    });
-    setIsPopupVisible(false);
-  };
-  
+
   // Handle add new address button
   const handleAddNewAddressClick = () => {
     setFormMode("add");
     setCurrentEditAddress(null); 
     setIsPopupVisible(true);
   };
+
+
+
   
   // Handle edit button for an existing address
   const handleEditAddressClick = (address) => {
@@ -203,34 +165,15 @@ const Checkout = () => {
     setIsPopupVisible(true); // Show the form popup
   };
 
- 
-  const handleSelectAddress = async (address) => {
-    const updatedAddresses = savedAddresses.map((addr) =>
-      addr.id === address.id
-        ? { ...addr, isDefault: true } // Set the selected address as default
-        : { ...addr, isDefault: false } // Set others as not default
-    );
+
+
   
-    try {
-      const userRef = doc(db, "users", user.uid);
-      await updateDoc(userRef, { addresses: updatedAddresses });
-      setSavedAddresses(updatedAddresses);
-      setSelectedAddress(address); // Update the selected address state
-    } catch (error) {
-      console.error("Error updating default address:", error);
-      alert("Failed to update the default address.");
-    }
-  };
-  const handleChangeAddressClick = () => {
-    if (showAllAddresses) {
-      // If already showing all addresses, toggle to "edit" mode for the first address
-      handleEditAddressClick(savedAddresses[0]);
-    } else {
-      // Otherwise, toggle visibility of all addresses
-      setShowAllAddresses(true);
-    }
+  const handleSelectAddress = (address) => {
+    setSelectedAddress(address); // Update the selected address state
   };
   
+
+
 
   const handleUpdateAddress = async (updatedAddress) => {
     try {
@@ -252,96 +195,162 @@ const Checkout = () => {
 
 
 
+
+  const sortedAddresses = [...savedAddresses].sort((a, b) =>
+    a.isDefault === b.isDefault ? 0 : a.isDefault ? -1 : 1
+  );
+
+
+
+
+
+  const handleMakeDefault = async (addressId) => {
+    // Mark the selected address as default by updating the state
+    const updatedAddresses = savedAddresses.map((address) => ({
+      ...address,
+      isDefault: address.id === addressId, // Mark the selected address as default
+    }));
+  
+    try {
+      // Update Firestore with the modified addresses and default ID
+      await updateDoc(doc(db, "users", user.uid), {
+        addresses: updatedAddresses,
+        defaultAddressId: addressId, // Save default address ID separately
+      });
+  
+      // Update local state with the updated addresses
+      setSavedAddresses(updatedAddresses);
+  
+      // Automatically set the default address as selected
+      const defaultAddress = updatedAddresses.find((address) => address.isDefault);
+      setSelectedAddress(defaultAddress);
+  
+      // Hide the other addresses once the default address is selected
+      setShowAllAddresses(false);
+  
+      console.log("Default address updated:", defaultAddress);
+    } catch (error) {
+      console.error("Error setting default address:", error);
+    }
+  };
+
+
+
+
+  const resetForm = () => {
+    setFormData({
+      firstName: "",
+      lastName: "",
+      addressLine1: "",
+      addressLine2: "",
+      state: "",
+      country: "",
+      mobileNo: "",
+      pincode: "",
+    });
+    setIsPopupVisible(false);
+  };
+  
+
+
+  
   return (
  
 <div className="container">
 
-<div className="checkout-container">
-  <h1>Delivery Address</h1>
+  {/* Default Address */}
+  <div className="checkout-container">
+  <h1 onClick={() => setShowAllAddresses(!showAllAddresses)} className="header">1.Delivery Address</h1>
 
-  {/* Show the first address (default) */}
-  {savedAddresses.length > 0 && !editAddress && (
+  {/* Check if any address is available */}
+  {sortedAddresses.length > 0 ? (
     <div className="address-card">
       <div className="address-header">
         <input
           type="radio"
           name="selectedAddress"
           className="radio-input"
-          checked={selectedAddress?.id === savedAddresses[0].id} // Compare with selectedAddress
-          onChange={() => handleSelectAddress(savedAddresses[0])}
+          checked={selectedAddress?.isDefault} // Ensure default address is selected
+          onChange={() => handleSelectAddress(sortedAddresses[0])} // Select default address
         />
-        <p className="address-name1">
-          {savedAddresses[0].firstName} {savedAddresses[0].lastName}
-          {savedAddresses[0].mobileNo}
-        </p>
+        <div className="address-content">
+          <span className="address-title">
+            {sortedAddresses[0].firstName} | {sortedAddresses[0].lastName} | {sortedAddresses[0].mobileNo}
+          </span>
+          <span className="address-details">
+            {sortedAddresses[0].addressLine1}, {sortedAddresses[0].addressLine2}, {sortedAddresses[0].state}, {sortedAddresses[0].country}, {sortedAddresses[0].pincode}
+          </span>
+        </div>
 
-        <p className="address-details1">
-          {savedAddresses[0].addressLine1}, {savedAddresses[0].addressLine2}, {savedAddresses[0].state},
-          {savedAddresses[0].country}, {savedAddresses[0].pincode}
-        </p>
-
+        {/* Change Address Button */}
         <button
-          onClick={handleChangeAddressClick}
+          onClick={handleChangeAddressClick} // Toggle address list visibility with smooth transition
           className="toggle"
         >
-          {showAllAddresses ? "Edit" : "Change Address"}
+          {showAllAddresses ? "Hide" : "Change "}
         </button>
 
-        {selectedAddress?.id === savedAddresses[0].id && ( // Conditionally render "Delivery Here" for selected default address
-          <button onClick={handleUseThisLocation} className="use-location-button">
-            Delivery Here
-          </button>
-        )}
+        {/* Edit button for default address */}
+        <button
+          onClick={() => handleEditAddressClick(sortedAddresses[0])}
+          className="edit-button1"
+        >
+          Edit
+        </button>
       </div>
-    </div>
-  )}
 
-  {/* Show all other addresses if "Change Address" is clicked */}
-  {showAllAddresses && savedAddresses.length > 1 && !editAddress && (
-    <div className="address-list">
-      {savedAddresses.slice(1).map((address) => (
-        <div key={address.id} className="address-card-horizontal">
-          <div className="address-header">
-            <input
-              type="radio"
-              name="selectedAddress"
-              className="radio-input1"
-              checked={selectedAddress?.id === address.id} // Use selectedAddress to check
-              onChange={() => handleSelectAddress(address)} // Handle radio button click
-            />
+      {/* Show other addresses */}
+      {showAllAddresses && (
+        <div className="address-list">
+          {sortedAddresses.slice(1).map((address) => (
+            <div key={address.id} className="address-card-horizontal">
+              <div className="address-header1">
+                <input
+                  type="radio"
+                  name="selectedAddress"
+                  className="radio-input1"
+                  checked={selectedAddress?.id === address.id} // Compare IDs
+                  onChange={() => handleSelectAddress(address)} // Handle radio button click
+                />
+                <div className="address-content">
+                  <span className="address-title">
+                    {address.firstName} | {address.lastName} | {address.mobileNo}
+                  </span>
+                  <span className="address-details">
+                    {address.addressLine1}, {address.addressLine2}, {address.state}, {address.country}, {address.pincode}
+                  </span>
+                </div>
 
-            <div className="address-content">
-              <span className="address-title">
-                {address.firstName} | {address.lastName} | {address.mobileNo}
-              </span>
-              <span className="address-details">
-                {address.addressLine1}, {address.addressLine2}, {address.state},{" "}
-                {address.country}, {address.pincode}
-              </span>
+                {/* Deliver Here button */}
+                {selectedAddress?.id === address.id && (
+                  <button
+                    onClick={() => handleMakeDefault(address.id)} // Set selected address as default
+                    className="use"
+                  >
+                    Deliver Here
+                  </button>
+                )}
+
+                {/* Edit button for other addresses */}
+                <button
+                  onClick={() => handleEditAddressClick(address)} // Open the form with this address data
+                  className="edit-button"
+                >
+                  Edit
+                </button>
+              </div>
             </div>
-
-            <button
-              onClick={() => handleEditAddressClick(address)}
-              className="edit-button"
-            >
-              Edit
-            </button>
-
-            {selectedAddress?.id === address.id && ( // Conditionally render button for selected address
-              <button onClick={handleUseThisLocation} className="use-location-button">
-                Delivery Here
-              </button>
-            )}
-          </div>
+          ))}
         </div>
-      ))}
+      )}
     </div>
+  ) : (
+    <p>No address selected.</p>
   )}
 
 
-
-
- <button onClick={handleAddNewAddressClick} className="add-button">Add a new address</button>
+    {/* Show all other addresses if "Change Address" is clicked */}
+    <button onClick={handleAddNewAddressClick} className="add-button">Add a new address</button>
  {isPopupVisible && (
   <div className="popup-container">
     <div className="form-container">
@@ -447,11 +456,9 @@ const Checkout = () => {
 )}
 
 
-{/* 
-<Order/>  
+<Order/> 
 
-
-<Payment/> */}
+<Payment/> 
 
 </div>
 

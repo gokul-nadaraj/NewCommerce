@@ -9,6 +9,7 @@ export default {
           bounce: "bounce 1s infinite",
           fade: "fade-in 1.5s ease-out",
         },
+        
         keyframes: {
           bounce: {
             "0%, 100%": { transform: "translateY(0)" },
